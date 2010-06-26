@@ -1,0 +1,107 @@
+/* YUI Reset ===========================================================================================
+Copyright (c) 2009, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.7.0
+--------------------------------------------------------------------------------------------------------*/ 
+html {color: #000;background: #ddd;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table {border-collapse:collapse;border-spacing: 0;}
+fieldset,img {border:0;}
+address,caption,cite,code,dfn,em,strong,th,var,optgroup {font-style:inherit;font-weight:inherit;}
+del,ins { text-decoration: none;}
+li {list-style:none;}
+caption,th {text-align:left;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight: normal;}
+q:before,q:after {content:'';}
+abbr,acronym {border:0;font-variant:normal;}
+sup{vertical-align:baseline;}
+sub{vertical-align:baseline;}
+/*because legend doesn't inherit in IE */
+legend {color: #000;}
+input,button,textarea,select,optgroup,option {font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+/*@purpose To enable resizing for IE */
+/*@branch For IE6-Win, IE7-Win */
+input,button,textarea,select{*font-size: 100%;}
+/* YUI Reset End =======================================================================================*/
+
+/* Color Define =========================================================================================================================*/
+/* Define background-color type -------------------------------------------------------------------------------------------------------*/
+.bgc-red    { background-color:#df0101;}
+.bgc-orange { background-color:#df6901;}
+.bgc-gery   { background-color:#898989;}
+.bgc-green  { background-color:#368500;}
+.bgc-blue   { background-color:#0479a7;}
+.bgc-purple { background-color:#df0193;}
+.bgc-dark   { background-color:#333333;}
+.bgc-light  { background-color:#f1f1f1;}
+/* Define the Text colors*/
+.red    { color:#df0101;}
+.green  { color:#368500;}
+.blue   { color:#0479a7;}
+.purple { color:#df0193;}
+.orange { color:#df6901;}
+.white  { color:#FFF;}
+/* Define the Revert Text colors*/
+.rbgc-red    { background-color:#df0101; color:#FFF; font-weight:bold; font-size:14px;}
+.rbgc-blue   { background-color:#0479a7; color:#FFF; font-weight:bold; font-size:14px;}
+.rbgc-green  { background-color:#368500; color:#FFF; font-weight:bold; font-size:14px;}
+.rbgc-orange { background-color:#df6901; color:#FFF; font-weight:bold; font-size:14px;}
+
+/* Define default form style =========================================================================================================================*/
+.formstyle .item{ padding:10px 0px; border-bottom:1px dotted #CCC; font-size:14px; *padding-bottom:0;}
+.formstyle .item-one{ padding:0; border:0;}
+.formstyle .item-one .detail{ float:none;}
+.formstyle .noborder{ border:0;}
+.formstyle .title{ float:left; width:105px; font-weight:bold; text-align:right; line-height:30px;}
+.formstyle .title span{ color:#F00;}
+.formstyle .detail{ float:right; width:560px; overflow:hidden; }
+.formstyle .tips, .formstyle .warn, .formstyle .correct{ display:block; clear:both; padding:5px;}
+.formstyle .tips{ color:#0479a7; background-color:#cadfec; }
+.formstyle .warn{ color:#FFF; background-color:#df0101; }
+.formstyle .correct{ color:#368500; background-color:#e0ffb0; }
+.formstyle .inp{ float:left; font-size:14px; padding:5px;}
+.formstyle .textarea{ font-size:14px; padding:5px; height:200px; line-height:20px; display:block; float:left;}
+.formstyle .inp1{ width:548px; *width:546px;}
+.formstyle select.inp1{ width:560px;}
+.formstyle select.inp{*margin-top:3px;}
+.formstyle .inp2{ width:200px;}
+.formstyle .inp3{ width:50px;}
+.formstyle .inp4{ width:475px; height:60px;}
+.formstyle .inp-between{ float:left; line-height:30px; padding:0 5px;}
+/*这里的改变文件上传框的样式的原理是调整原有文件上传框透明度为0，然后再用margin负值压在另一个写好样式的东西上面*/
+/*这里有注意的地方就是FF控制文件上传框的宽度需要用到HTML属性size*/
+/*还有就是用js来控制用户选择文件地址的在文本框的显示*/
+.formstyle .file{ width:560px; height:30px;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);}
+.formstyle .file-wrap{ margin-top:-30px; position:absolute; *position:inherit;opacity:0;}
+.formstyle .file-inp{ width:482px; *width:455px;}
+.formstyle .file-btn{ margin:1px 0 0 5px; *margin-top:0;}
+.formstyle .check { padding-top:2px;}
+.formstyle .check div{ float:left;}
+.formstyle .check div input{ float:left; display:block; height:29px; width:20px; }
+.formstyle .check div span{ float:left; display:block; padding:4px 10px 0px 5px; font-size:1.15em; color:#555; }
+.formstyle .check1 div span{ width:525px;}
+.formstyle .check2 div span{ width:245px;}
+.formstyle .check3 div span{ width:151px;}
+.formstyle .check4{ float:right; width:70px; overflow:hidden;}
+.formstyle .check4 div span{ width:45px; padding-right:0; padding-left:0;}
+.formstyle .rate{ width:415px; float:right; line-height:28px;}
+
+.formstyle .margin-right{ margin-right:5px;}
+.formstyle ul.sortbox{ width:265px; background-color:#CCC; float:left; padding:5px; font-size:12px;}
+.formstyle ul.sortbox li.desc{ font-weight:bold;}
+.formstyle ul.sortbox li.sortitem{ line-height:20px; border:1px dotted #CCC; margin-top:5px; background-color:#EEE; padding:0 5px; cursor:pointer;}
+.formstyle .separate-select a{ color:#09F; cursor:pointer;}
+.formstyle .judge-target{ display:none;}
+
+/* Definte default table style ======================================================================================================== */
+.tablestyle {font: normal 12px auto;color: #4f6b72;background: #E6EAE9; width:100%; padding:0; margin:0 0 10px; float:left;}
+.tablestyle a {color: #c75f3e;}
+.tablestyle caption {padding: 0 0 5px 0;width:100%;font: italic 11px;text-align: right;}
+.tablestyle th {font: bold 11px;color: #4f6b72;border-right: 1px solid #C1DAD7;border-bottom: 1px solid #C1DAD7;border-top: 1px solid #C1DAD7;letter-spacing: 2px;text-transform: uppercase;text-align: left;padding: 6px 6px 6px 12px;background: #CAE8EA url(gfx/bg_header.jpg) no-repeat;}
+.tablestyle th.nobg {border: 1px solid #C1DAD7; background: none;}
+.tablestyle td {border-right: 1px solid #C1DAD7;border-bottom: 1px solid #C1DAD7;background: #fff;padding: 6px 6px 6px 12px;color: #4f6b72;}
+.tablestyle td.alt {background: #F5FAFA;color: #797268;}
+.tablestyle th.spec {border-left: 1px solid #C1DAD7;border-top: 0;background: #fff url(gfx/bullet1.gif) no-repeat;font: bold 10px;}
+.tablestyle th.specalt {border-left: 1px solid #C1DAD7;border-top: 0;background: #f5fafa url(gfx/bullet2.gif) no-repeat;font: bold 10px;color: #797268;}
+
