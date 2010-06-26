@@ -1,1 +1,6 @@
-// JavaScript Document
+jQuery(document).ready(function($) {
+
+	$("*[ajaxstatus='loading']").hide();
+
+
+});

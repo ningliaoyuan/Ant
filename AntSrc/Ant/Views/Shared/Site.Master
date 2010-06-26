@@ -7,26 +7,19 @@
 	<link href="/Content/Style/gmat.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="/Scripts/jquery-1.4.2.min.js"></script>
 	<script type="text/javascript" src="/Scripts/jquery.tools.min.js"></script>
-	<script type="text/javascript" src="/Scripts/kaogmat.js"></script>
+	<script type="text/javascript" src="/Scripts/antaeus.ajax.js"></script>
+	<script type="text/javascript" src="/Scripts/antaeus.kaogmat.js"></script>
 </head>
 
 <body>
     <div class="header">
         <div class="wrap">
             <div class="main">
-                <div class="logo">
-                    <img src="/Contents/Images/Logo.png" alt="www.JINBU8.com" /></div>
-                <div class="login">
-                    <div class="exam">
-                        <span>当前关注考试</span>
-                        <img src="/Contents/Images/Logo_GMAT.gif" alt="进步吧 — 每天进步一点点，我一定可以成功" />
-                    </div>
-                    <div id="LogonContent" ajaxrefresh="LogonContent">
-                        
-                    </div>                    
+                <div class="logo"><img src="/Content/Images/Logo.png" alt="www.JINBU8.com" /></div>
+                <div class="login" id="LogonContent" ajaxrefresh="LogonContent">
+                	<% Html.RenderPartial("~/Views/Shared/LogOnUserControl.ascx", string.Empty); %>                
                 </div>
-                <div class="quatotion">
-                    荀子曰：不积跬步，无以至千里</div>
+                <div class="quatotion">荀子曰：不积跬步，无以至千里</div>
             </div>
             <div class="navigation">
                 <div class="link">

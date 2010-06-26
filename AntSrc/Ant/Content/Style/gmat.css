@@ -10,14 +10,14 @@ property:value !important; ---- FF,IE7,IE8
 .wrap{ width:985px; margin-left:auto; margin-right:auto;}
 
 .header{ height:190px; overflow:hidden; background-color:#000;}
+.header{ background:#000 url(../Images/BG_GMAT.jpg) scroll repeat-x center top;}
+
 .header .main{ height:150px;}
 .header .main .logo{ float:left; width:300px; height:100px; position:relative; left:-10px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='false') !important; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true', src='/Contents/Images/logo.png');}
 .header .main .logo img{ display:block !important; display:none\9;}
 .header .main .quatotion{ float:right; width:500px; text-align:right; color:#fff; height:14px; font-size:14px; line-height:14px; padding-top:60px;}
 
-.header .main .login{ float:right; width:400px; height:67px; background-image:url(../Images/Login_BG.gif); background-repeat:no-repeat;}
-.header .main .login .exam{ float:left; width:93px; border-right:1px solid #e4e4e4; height:52px; text-align:center; font-size:10px; padding-top:15px;}
-.header .main .login .exam span{ font-size:10px; line-height:16px; color:#888;}
+.header .main .login{ float:right; width:300px; height:67px; background:#fff url(../Images/Login_BG.gif) no-repeat;}
 
 .header .main .login .loginform{ float:left; padding:12px 13px 12px 13px; width:280px; font-size:10px; color:#888;}
 .header .main .login .loginform div{ float:left; background-repeat:no-repeat;}
