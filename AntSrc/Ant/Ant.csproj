@@ -74,7 +74,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\BG_GMAT.jpg" />
+    <Content Include="Content\Images\Logo.png" />
+    <Content Include="Content\Style\common.css" />
+    <Content Include="Content\Style\gmat.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\antaeus.ajax.js" />
+    <Content Include="Scripts\antaeus.kaogmat.js" />
+    <Content Include="Scripts\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\jquery.tools.min.js" />
+    <Content Include="Views\Popup\PopupLogon.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -82,7 +91,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />

@@ -6,56 +6,45 @@ _property:value; -------------- IE6
 property:value !important; ---- FF,IE7,IE8
 *property:value; -------------- IE6,IE7
 ----------------------------------------------------------------------------*/
+html, body{ background-color:#d6dbde;}
+body{ font-family:"微软雅黑", "宋体"; font-size:12px; color:#000; width:980px; margin:0 auto;}
 
-.wrap{ width:985px; margin-left:auto; margin-right:auto;}
+a, a:link, a:visited{ color:#1188c1; text-decoration:underline; cursor:pointer;}
+a:hover{ color:#ff0000; text-decoration:underline;}
 
-.header{ height:190px; overflow:hidden; background-color:#000;}
-.header{ background:#000 url(../Images/BG_GMAT.jpg) scroll repeat-x center top;}
+.header{ background-color:#fff; padding:15px;}
+.header .logo{ float:left; width:130px;}
+.header .logo a, .header .logo a:link, .header .logo a:visited, .header .logo a:hover{ color:#000; font-size:30px; font-weight:bold; text-decoration:none; line-height:30px;}
+.header .status{ float:right; width:200px; text-align:right; line-height:20px;}
+.nav{ background-color:#000; color:#fff; -moz-border-radius:0px 0px 5px 5px; -webkit-border-radius:0px 0px 5px 5px;}
+.nav ul{ float:left; width:700px; padding-left:5px;}
+.nav li{ display:block; float:left; width:70px; text-align:center; font-size:16px; line-height:40px;}
+.nav li.current{ background-color:#333;}
+.nav li a, .nav li a:link, .nav li a:visited, .nav li a:hover{ color:#fff; text-decoration:none;}
+.nav li a:hover{ color:#ff0000;}
+.nav .search{ float:right; width:260px; padding-top:5px;}
+.nav .search input[type='text']{ border:1px solid #ccc; background-color:#f8f8f8; height:24px; width:200px;}
 
-.header .main{ height:150px;}
-.header .main .logo{ float:left; width:300px; height:100px; position:relative; left:-10px; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='false') !important; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true', src='/Contents/Images/logo.png');}
-.header .main .logo img{ display:block !important; display:none\9;}
-.header .main .quatotion{ float:right; width:500px; text-align:right; color:#fff; height:14px; font-size:14px; line-height:14px; padding-top:60px;}
+.btn{ font-size:12px; font-weight:bold; line-height:12px; padding:3px;}
+.btn-green { border:1px solid #588624; background-color:#80b91c; border-bottom:1px solid #455f08;  border-right:1px solid #455f08; color:#fff; cursor:pointer;}
+.btn-gray  { border:1px solid #c4c4c4; background-color:#f1f1f1; border-bottom:1px solid #8a8a8a;  border-right:1px solid #8a8a8a; color:#444; cursor:pointer;}
+.btn-blue  { border:1px solid #246686; background-color:#1c97b9; border-bottom:1px solid #08525f;  border-right:1px solid #08525f; color:#fff; cursor:pointer;}
+.btn-red   { border:1px solid #b23534; background-color:#ea1f34; border-bottom:1px solid #921615;  border-right:1px solid #921615; color:#fff; cursor:pointer;}	
 
-.header .main .login{ float:right; width:300px; height:67px; background:#fff url(../Images/Login_BG.gif) no-repeat;}
+.popup{ background-color:#fff; -moz-border-radius:5px; -webkit-border-radius:5px; -moz-box-shadow:3px 3px 2px #333333;-webkit-box-shadow:3px 3px 2px #333333; filter:progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, color=black);}
+.popup .close{ display:block; float:right; font-size:12px; padding-right:10px; cursor:pointer; padding-top:10px; }
+.popup .close i{ font-style:normal;color:#888; text-decoration:underline;}
+.popup .close span{ font-size:10px; color:#F00;}
+.popup .title{ font-size:35px; font-weight:bold; text-align:center; clear:both;}
+.popup .subtitle{ font-size:14px; text-align:center;}
+.popup form{ border:1px solid #e1e1d9; background-color:#fffbe7; margin:15px; padding:10px; -moz-border-radius:3px; -webkit-border-radius:3px;}
+.popup form label{ color:#ed7208; font-size:16px; display:block; float:left; line-height:28px;}
+.popup form input.inp{ border:1px solid #b8b8b8; width:295px; font-size:18px; height:24px; line-height:24px;}
+.popup form span{ font-size:12px;}
+.popup form a{ display:block; float:right; font-size:12px; line-height:28px;}
+.popup form div{ padding-bottom:5px;}
+.popup form div.warn{ background-color:#ffe5e5; color:#c60000; font-size:12px; padding:5px; line-height:12px;}
+.popup form div.warn span{ font-weight:bold; background-color:#c60000; color:#fff;}
 
-.header .main .login .loginform{ float:left; padding:12px 13px 12px 13px; width:280px; font-size:10px; color:#888;}
-.header .main .login .loginform div{ float:left; background-repeat:no-repeat;}
-.header .main .login .loginform a:link{ text-decoration:none; color:#888;}
-.header .main .login .loginform a:visited{ text-decoration:none; color:#888;}
-.header .main .login .loginform a:hover{ text-decoration:underline; color:#FF0000;}
-.header .main .login .loginform .email{ background-image:url(../Images/Login_Form.gif); background-position:0px 0px; height:23px; width:109px;}
-.header .main .login .loginform .password{ background-image:url(../Images/Login_Form.gif); background-position:-116px 0px; height:23px; width:109px; margin-left:7px;}
-.header .main .login .loginform .email input, 
-.header .main .login .loginform .password input{ border:none; background-color:Transparent; display:block; margin-left:25px; margin-top:4px; width:80px; color:#888;}
-.header .main .login .loginform .submit{ background-image:url(../Images/Login_Form.gif); background-position:-232px 0px; height:23px; width:43px; margin-left:7px;}
-.header .main .login .loginform .submit a{ display:block; width:43px; height:23px;}
-.header .main .login .loginform .auto{ padding-top:6px; padding-left:6px; height:14px; width:110px;}
-.header .main .login .loginform .auto input{ display:block; float:left; *margin-top:-3px;}
-.header .main .login .loginform .auto span{ display:block; float:left; height:14px; line-height:14px; padding-left:3px;}
-.header .main .login .loginform .forgot{ height:14px; line-height:14px; width:110px; padding-top:6px;}
-.header .main .login .loginform .register{ height:14px; line-height:14px; width:50px; padding-top:6px;}
-.header .main .login .loginform .register a{ color:#0096ff;}
-.header .main .login .loginform .register a:link{ color:#0096ff;}
 
-.header .main .login .logined{ float:left; padding:12px 13px; width:280px; font-size:10px; color:#888;}
-.header .main .login .logined p,
-.header .main .login .logined span{ display:block; font-size:12px; line-height:20px;}
-.header .main .login .logined span{ color:#F60;}
-
-.header .navigation{ height:40px; background-color:#000;}
-.header .navigation .link a{float:left; height:40px; line-height:40px; font-size:14px; color:#FFF; letter-spacing:5px; display:block; padding-left:15px; padding-right:15px;}
-.header .navigation .link a:link{ text-decoration:none;}
-.header .navigation .link a:visited{ text-decoration:none;}
-.header .navigation .link a:hover,
-.header .navigation .link a:active{ text-decoration:none; background-image:url(../Images/Navigation_Hover.gif); background-repeat:no-repeat; background-position:center;}
-.header .navigation .link a.current{ background:#FFF url(../Images/1px.gif) scroll repeat-x 0 -600px; color:#333;}
-.header .navigation .search{ float:right; padding-top:8px; height:24px; width:250px;}
-.header .navigation .search input{border:none; background-color:#FFF; line-height:12px; width:180px; padding:4px 10px; height:16px; font-size:12px; color:#cfcfcf; display:block; float:left; padding:0px 10px\9; height:24px\9; line-height:24px\9;}
-.header .navigation .search a{ display:block; float:left; width:50px; height:24px; background-color:#b3b3b3; letter-spacing:5px; text-align:center; color:#333; font-size:12px; line-height:24px; font-weight:bold;}
-.header .navigation .search a:link,
-.header .navigation .search a:visited,
-.header .navigation .search a:hover,
-.header .navigation .search a:active{ text-decoration:none;} 
-
-.footer{ height:110px; border-top:1px solid #bdbdbd; background-color:#333;}
+#DivLogon{ display:none; width:350px;}

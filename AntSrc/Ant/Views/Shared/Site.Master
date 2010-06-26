@@ -1,4 +1,5 @@
 ﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Register src="../Popup/PopupLogon.ascx" tagname="PopupLogon" tagprefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -12,37 +13,31 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="wrap">
-            <div class="main">
-                <div class="logo"><img src="/Content/Images/Logo.png" alt="www.JINBU8.com" /></div>
-                <div class="login" id="LogonContent" ajaxrefresh="LogonContent">
-                	<% Html.RenderPartial("~/Views/Shared/LogOnUserControl.ascx", string.Empty); %>                
-                </div>
-                <div class="quatotion">荀子曰：不积跬步，无以至千里</div>
-            </div>
-            <div class="navigation">
-                <div class="link">
-                    <a href="/" class="current">主页</a> <a href="/Question">题库</a> <a href="/Knowledge">知识点</a>
-                    <a href="/Article">文章</a>
-					<a href="/Review">计划</a>
-                </div>
-                <div class="search">
-                    <input type="text" value="输入题目编号直接浏览题目" />
-                    <a href="/Search/Result/">搜索</a>
-                </div>
-            </div>
-            <div class="clear">
-            </div>
-        </div>
+<form id="form1" runat="server">
+	
+<div class="header">
+	<div class="logo"><a href="http://www.kaogmat.com">考GMAT</a></div>
+   	<div class="status">
+    	<a class="logon" id="LinkLogon">登录</a>
+        <a class="register" id="LinkRegister">注册</a>
     </div>
-    <div class="content">
-        <div class="wrap">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-            <div class="clear">
-            </div>
-        </div>
-    </div>
-	<!--这里还需要写Footer-->
+    <div class="clear"></div>    
+</div>
+<div class="nav">
+	<ul>
+		<li class="current"><a href="/">首页</a></li>
+		<li><a href="#">语法题</a></li>
+		<div class="clear"></div>
+    </ul>
+	<div class="search"><input type="text" />&nbsp;<input class="btn btn-green" type="button" value="搜索" /></div>
+	<div class="clear"></div> 
+</div>
+<div class="blank15"></div>
+<div class="content"><asp:ContentPlaceHolder ID="MainContent" runat="server" /></div>
+<!--这里还需要写Footer-->
+    
+</form>
+
+<div id="DivLogon" class="popup"><uc1:PopupLogon ID="PopupLogon1" runat="server" /></div>
 </body>
 </html>
