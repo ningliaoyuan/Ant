@@ -1,0 +1,40 @@
+/* YUI Reset ===========================================================================================
+Copyright (c) 2009, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.7.0
+--------------------------------------------------------------------------------------------------------*/ 
+html {color: #000;background: #ddd;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table {border-collapse:collapse;border-spacing: 0;}
+fieldset,img {border:0;}
+address,caption,cite,code,dfn,em,strong,th,var,optgroup {font-style:inherit;font-weight:inherit;}
+del,ins { text-decoration: none;}
+li {list-style:none;}
+caption,th {text-align:left;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight: normal;}
+q:before,q:after {content:'';}
+abbr,acronym {border:0;font-variant:normal;}
+sup{vertical-align:baseline;}
+sub{vertical-align:baseline;}
+/*because legend doesn't inherit in IE */
+legend {color: #000;}
+input,button,textarea,select,optgroup,option {font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+/*@purpose To enable resizing for IE */
+/*@branch For IE6-Win, IE7-Win */
+input,button,textarea,select{*font-size: 100%;}
+/* YUI Reset End =======================================================================================*/
+
+/* Define the most useful classes======================================================================================= */
+.clear{ clear:both; font-size:0px; line-height:0px; height:0px;}
+.hidden{ display:none;}
+.notvisable{ visibility:hidden;}
+.noborder{ border:0;}
+.nopadding{ padding:0;}
+.nomargin{ margin:0;}
+.blank5{ height:5px; font-size:5px; line-height:5px; clear:both;}
+.blank10{ height:10px; font-size:10px; line-height:10px; clear:both;}
+.blank15{ height:15px; font-size:15px; line-height:15px; clear:both;}
+.left{ float:left;}
+.right{ float:right;}
+

@@ -1,40 +1,43 @@
 ﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
-
+<%@ Register src="../Popup/PopupLogon.ascx" tagname="PopupLogon" tagprefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
-    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/Style/common.css" rel="stylesheet" type="text/css" />
+	<link href="/Content/Style/gmat.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="/Scripts/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="/Scripts/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="/Scripts/antaeus.ajax.js"></script>
+	<script type="text/javascript" src="/Scripts/antaeus.kaogmat.js"></script>
 </head>
 
 <body>
-    <div class="page">
-
-        <div id="header">
-            <div id="title">
-                <h1>My MVC Application</h1>
-            </div>
-              
-            <div id="logindisplay">
-                <% Html.RenderPartial("LogOnUserControl"); %>
-            </div> 
-            
-            <div id="menucontainer">
-            
-                <ul id="menu">              
-                    <li><%: Html.ActionLink("Home", "Index", "Home")%></li>
-                    <li><%: Html.ActionLink("About", "About", "Home")%></li>
-                </ul>
-            
-            </div>
-        </div>
-
-        <div id="main">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-
-            <div id="footer">
-            </div>
-        </div>
+<form id="form1" runat="server">
+	
+<div class="header">
+	<div class="logo"><a href="http://www.kaogmat.com">考GMAT</a></div>
+   	<div class="status">
+    	<a class="logon" id="LinkLogon">登录</a>
+        <a class="register" id="LinkRegister">注册</a>
     </div>
+    <div class="clear"></div>    
+</div>
+<div class="nav">
+	<ul>
+		<li class="current"><a href="/">首页</a></li>
+		<li><a href="#">语法题</a></li>
+		<div class="clear"></div>
+    </ul>
+	<div class="search"><input type="text" />&nbsp;<input class="btn btn-green" type="button" value="搜索" /></div>
+	<div class="clear"></div> 
+</div>
+<div class="blank15"></div>
+<div class="content"><asp:ContentPlaceHolder ID="MainContent" runat="server" /></div>
+<!--这里还需要写Footer-->
+    
+</form>
+
+<div id="DivLogon" class="popup"><uc1:PopupLogon ID="PopupLogon1" runat="server" /></div>
 </body>
 </html>
