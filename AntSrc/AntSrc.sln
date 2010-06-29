@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant.Tests", "Ant.Tests\Ant.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant.Models", "Ant.Models\Ant.Models.csproj", "{417FF3C8-03AD-4DA5-94AC-FF5DC879C404}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ref", "Ref", "{A7F0B581-2A4E-4857-B2FA-D9F77A7AC058}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoRM", "..\Ref\NoRM\NoRM\NoRM.csproj", "{297A83DB-DACE-4264-B28E-769CF165D4E4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,15 +25,8 @@ Global
 		{417FF3C8-03AD-4DA5-94AC-FF5DC879C404}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{417FF3C8-03AD-4DA5-94AC-FF5DC879C404}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{417FF3C8-03AD-4DA5-94AC-FF5DC879C404}.Release|Any CPU.Build.0 = Release|Any CPU
-		{297A83DB-DACE-4264-B28E-769CF165D4E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{297A83DB-DACE-4264-B28E-769CF165D4E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{297A83DB-DACE-4264-B28E-769CF165D4E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{297A83DB-DACE-4264-B28E-769CF165D4E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{297A83DB-DACE-4264-B28E-769CF165D4E4} = {A7F0B581-2A4E-4857-B2FA-D9F77A7AC058}
 	EndGlobalSection
 EndGlobal
