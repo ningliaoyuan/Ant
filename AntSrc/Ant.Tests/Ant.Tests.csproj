@@ -66,10 +66,6 @@
     <Content Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Ref\NoRM\NoRM\NoRM.csproj">
-      <Project>{297A83DB-DACE-4264-B28E-769CF165D4E4}</Project>
-      <Name>NoRM</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Ant.Models\Ant.Models.csproj">
       <Project>{417FF3C8-03AD-4DA5-94AC-FF5DC879C404}</Project>
       <Name>Ant.Models</Name>
