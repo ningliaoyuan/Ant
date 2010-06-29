@@ -65,6 +65,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\SC\Controllers\QuestionController.cs" />
+    <Compile Include="Areas\SC\SCAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -74,6 +76,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\SC\Views\Question\Create.aspx" />
+    <Content Include="Areas\SC\Views\Question\Index.aspx" />
     <Content Include="Content\Images\BG_GMAT.jpg" />
     <Content Include="Content\Images\Logo.png" />
     <Content Include="Content\Style\common.css" />
@@ -120,12 +124,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\SC\Models\" />
+    <Folder Include="Areas\SC\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ant.Models\Ant.Models.csproj">
       <Project>{417FF3C8-03AD-4DA5-94AC-FF5DC879C404}</Project>
       <Name>Ant.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SC\Views\Web.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

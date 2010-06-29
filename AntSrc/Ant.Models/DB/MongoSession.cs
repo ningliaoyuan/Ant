@@ -3,83 +3,52 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Norm;
+using Ant.Models.Questions;
+using Norm.Responses;
+using Norm.Configuration;
 
 namespace Ant.Models.DB
-{/*
-    internal class MongoSession<TEntity> : IDisposable
+{
+    public class MongoSession : IDisposable
     {
 
-        private readonly Mongo provider;
-
-
+        private readonly Mongo _provider;
 
         public MongoSession()
         {
-
-            this.provider = new MongoQueryProvider("Expense");
-
+            _provider = Mongo.Create("mongodb://127.0.0.1/NormTests?strict=false");
         }
 
+        public MongoDatabase DB { get { return this._provider.Database; } }
 
-
-        public IQueryable<TEntity> Queryable
+        public IQueryable<Question> Questions
         {
-
-            get { return new MongoQuery<TEntity>(this.provider); }
-
+            get { return _provider.GetCollection<Question>().AsQueryable(); }
         }
-
-
-
-        public MongoQueryProvider Provider
-        {
-
-            get { return this.provider; }
-
-        }
-
-
-
-        public void Add<T>(T item) where T : class, new()
-        {
-
-            this.provider.DB.GetCollection<T>().Insert(item);
-
-        }
-
-
 
         public void Dispose()
         {
+            _provider.Dispose();
+        }
 
-            this.provider.Server.Dispose();
+        public void Add<T>(T item) where T : class, new()
+        {
+            _provider.Database.GetCollection<T>().Insert(item);
+        }
 
+        public void Update<T>(T item) where T : class, new()
+        {
+            _provider.Database.GetCollection<T>().Save(item);
         }
 
         public void Delete<T>(T item) where T : class, new()
         {
-
-            this.provider.DB.GetCollection<T>().Delete(item);
-
+            _provider.Database.GetCollection<T>().Delete(item);
         }
 
-
-
-        public void Drop<T>()
-        {
-
-            this.provider.DB.DropCollection(typeof(T).Name);
-
-        }
-
-
-
-        public void Save<T>(T item) where T : class,new()
-        {
-
-            this.provider.DB.GetCollection<T>().Save(item);
-
-        }
-    } 
-  */
+        //public void Drop<T>()
+        //{
+        //    _provider.Database.DropCollection(MongoConfiguration.GetCollectionName(typeof(T)));
+        //}
+    }
 }

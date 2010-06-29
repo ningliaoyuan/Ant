@@ -47,7 +47,8 @@
     <Compile Include="DB\MongoSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Questions\QuestionBase.cs" />
-    <Compile Include="Questions\QuestionSC.cs" />
+    <Compile Include="Questions\QuestionModel.cs" />
+    <Compile Include="Questions\Question.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

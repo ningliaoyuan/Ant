@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Ant.Models.DB;
 
 namespace Ant.Models.Questions
 {
-    class QuestionSC
+    public class QuestionModel
     {
+      
+
     }
 }
