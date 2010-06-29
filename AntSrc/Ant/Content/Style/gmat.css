@@ -37,14 +37,19 @@ a:hover{ color:#ff0000; text-decoration:underline;}
 .popup .close span{ font-size:10px; color:#F00;}
 .popup .title{ font-size:35px; font-weight:bold; text-align:center; clear:both;}
 .popup .subtitle{ font-size:14px; text-align:center;}
-.popup form{ border:1px solid #e1e1d9; background-color:#fffbe7; margin:15px; padding:10px; -moz-border-radius:3px; -webkit-border-radius:3px;}
-.popup form label{ color:#ed7208; font-size:16px; display:block; float:left; line-height:28px;}
-.popup form input.inp{ border:1px solid #b8b8b8; width:295px; font-size:18px; height:24px; line-height:24px;}
-.popup form span{ font-size:12px;}
-.popup form a{ display:block; float:right; font-size:12px; line-height:28px;}
-.popup form div{ padding-bottom:5px;}
-.popup form div.warn{ background-color:#ffe5e5; color:#c60000; font-size:12px; padding:5px; line-height:12px;}
-.popup form div.warn span{ font-weight:bold; background-color:#c60000; color:#fff;}
+
+#FormPopup{ border:1px solid #e1e1d9; background-color:#fffbe7; margin:15px; padding:10px; -moz-border-radius:3px; -webkit-border-radius:3px;}
+#FormPopup label{ color:#ed7208; font-size:16px; display:block; float:left; line-height:28px;}
+#FormPopup input.inp{ border:1px solid #b8b8b8; width:295px; font-size:18px; height:24px; line-height:24px;}
+#FormPopup span{ font-size:12px;}
+#FormPopup a{ display:block; float:right; font-size:12px; line-height:28px;}
+#FormPopup div{ padding-bottom:5px;}
+#FormPopup div.wrong{ background-color:#ffe5e5; color:#c60000; font-size:12px; padding:5px; line-height:12px; margin-bottom:5px;}
+#FormPopup div.wrong span{ font-weight:bold; background-color:#c60000; color:#fff;}
+#FormPopup div.correct{ background-color:#dbffa3; color:#5b9401; font-size:12px; padding:5px; line-height:12px; margin-bottom:5px;}
+#FormPopup div.correct span{ font-weight:bold; background-color:#5b9401; color:#fff;}
 
 
 #DivLogon{ display:none; width:350px;}
+#DivRegister{ display:none; width:350px;}
+#DivForgetPassword{ display:none; width:350px;}

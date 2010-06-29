@@ -83,7 +83,9 @@
     <Content Include="Scripts\antaeus.kaogmat.js" />
     <Content Include="Scripts\jquery-1.4.2.min.js" />
     <Content Include="Scripts\jquery.tools.min.js" />
+    <Content Include="Views\Popup\PopupForgetPassword.ascx" />
     <Content Include="Views\Popup\PopupLogon.ascx" />
+    <Content Include="Views\Popup\PopupRegister.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
