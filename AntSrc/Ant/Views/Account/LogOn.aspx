@@ -43,4 +43,7 @@
             </fieldset>
         </div>
     <% } %>
+    <p>
+        <%: Html.ActionLink("哎呀，我忘记我的密码了", "ForgetPassword") %>
+    </p>
 </asp:Content>

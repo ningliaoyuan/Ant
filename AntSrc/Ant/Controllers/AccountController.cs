@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using Ant.Models;
+using Ant.Models.Account;
 
 namespace Ant.Controllers
 {
@@ -147,6 +148,53 @@ namespace Ant.Controllers
         public ActionResult ChangePasswordSuccess()
         {
             return View();
+        }
+
+        public ActionResult ForgetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ForgetPassword(ForgetPasswordModel model, string returnUrl)
+        {
+            if (ModelState.IsValid)
+            {
+                var username = Membership.GetUserNameByEmail(model.Email);
+                if (!string.IsNullOrEmpty(username))
+                {
+                    var user = Membership.GetUser(username, false);
+                    if (user.Email == model.Email)
+                    {
+                        EmailAdmin.SendPassword(user.Email, user.UserName, user.ResetPassword());
+                        if (!String.IsNullOrEmpty(returnUrl))
+                        {
+                            return Redirect(returnUrl);
+                        }
+                        else
+                        {
+                            return RedirectToAction("ForgetPasswordDone", model);
+                        }
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "用户名与邮箱地址不匹配。");
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("", "用户名不存在。");
+                }
+            }
+               
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
+        public ActionResult ForgetPasswordDone(ForgetPasswordModel model)
+        {
+            return View(model);
         }
 
     }

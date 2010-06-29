@@ -47,6 +47,13 @@ namespace Ant.Models
         public bool RememberMe { get; set; }
     }
 
+    public class ForgetPasswordModel
+    {
+        [Required]
+        [DisplayName("注册用的邮箱")]
+        public string Email { get; set; }
+    }
+
     [PropertiesMustMatch("Password", "ConfirmPassword", ErrorMessage = "The password and confirmation password do not match.")]
     public class RegisterModel
     {
@@ -89,6 +96,13 @@ namespace Ant.Models
 
     public class AccountMembershipService : IMembershipService
     {
+        public MembershipProvider Povider
+        {
+            get
+            {
+                return _provider;
+            }
+        }
         private readonly MembershipProvider _provider;
 
         public AccountMembershipService()
