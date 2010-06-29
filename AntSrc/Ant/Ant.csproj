@@ -83,6 +83,8 @@
     <Content Include="Scripts\antaeus.kaogmat.js" />
     <Content Include="Scripts\jquery-1.4.2.min.js" />
     <Content Include="Scripts\jquery.tools.min.js" />
+    <Content Include="Views\Account\ForgetPassword.aspx" />
+    <Content Include="Views\Account\ForgetPasswordDone.aspx" />
     <Content Include="Views\Popup\PopupLogon.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -116,6 +118,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ant.Models\Ant.Models.csproj">
+      <Project>{417FF3C8-03AD-4DA5-94AC-FF5DC879C404}</Project>
+      <Name>Ant.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
