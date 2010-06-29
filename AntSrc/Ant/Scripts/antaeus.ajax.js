@@ -21,18 +21,8 @@ $.ajaxSetup({
 
 //所有AJAX的直接请求URL判断与控制
 var ajaxFunction = {};
-ajaxFunction["Login"]                  = function(param, callback){$.post("/Account/Logon/",{Username:param.un, Password: param.psd, RememberMe: param.remember}, callback);};
-ajaxFunction["RateAverge"]             = function(param, callback){$.get("/Question/GetAverage/"+param.qID, callback);};
-ajaxFunction["RateQuestion"]           = function(param, callback){$.get("/Question/Rate/" + param.qID, { rate: param.qValue },callback);};
-ajaxFunction["QuestionRecord"]         = function(param, callback){$.get("/Question/Answer/" + param.qID, {answer:param.answer, correct:param.correct, cost:param.time},callback);};
-ajaxFunction["LogonContent"]           = function(param, callback){$.get("/Account/LogOnUserControl", callback);};
-ajaxFunction["FormQuestionCreateLoad"] = function(param, callback){$.get("/Question/Form/" + param.type, callback);};
-ajaxFunction["FavoriteAdd"]            = function(param, callback){$.get("/NormalUser/FavoriteAdd", {key:param.qType, id: param.qID},callback);};
-ajaxFunction["FavoriteRemove"]         = function(param, callback){$.get("/NormalUser/FavoriteRemove", {key:param.qType,id: param.qID}, callback);};
-ajaxFunction["FavoriteAddTags"]        = function(param, callback){$.get("/NormalUser/FavoriteAddTags",{key:param.qType, id : param.qID, tags:param.tags},callback);};
-ajaxFunction["ReviewMode"]             = function(param, callback){$.get("/Review/GetTable",{days:param.days, mode: param.mode, time:param.time},callback);};
-ajaxFunction["ReviewDay"]              = function(param, callback){$.get("/Review/GetTimeTable",{days:param.days, part: param.part, time:param.time},callback);};
-ajaxFunction["ReviewTime"]             = function(param, callback){$.get("/Review/GetDesc",{mode:param.mode, periods: param.periods, time:param.time},callback);};
+ajaxFunction["Logon"] = function(param, callback){$.post("/Account/Logon/",{Username:param.un, Password: param.psd, RememberMe: param.remember}, callback);};
+
 
 //Refresh函数用于调用AJAX来自我刷新
 function ajaxRefresh(obj, param, callback) {
