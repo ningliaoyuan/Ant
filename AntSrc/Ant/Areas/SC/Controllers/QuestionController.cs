@@ -47,6 +47,7 @@ namespace Ant.Areas.SC.Controllers
                 // TODO: Add insert logic here
                 using (var s = new MongoSession())
                 {
+                    q.Number = new IDProvider().GetNewID("Question");
                     s.Add(q);
                 }
                 return RedirectToAction("Index");

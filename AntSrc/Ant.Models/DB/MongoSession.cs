@@ -6,6 +6,7 @@ using Norm;
 using Ant.Models.Questions;
 using Norm.Responses;
 using Norm.Configuration;
+using Norm.Collections;
 
 namespace Ant.Models.DB
 {
@@ -26,6 +27,16 @@ namespace Ant.Models.DB
             get { return _provider.GetCollection<Question>().AsQueryable(); }
         }
 
+        public IMongoCollection<T> GetCollection<T>()
+        {
+             return _provider.GetCollection<T>();
+        }
+
+        public IQueryable<T> GetQuery<T>()
+        {
+            return _provider.GetCollection<T>().AsQueryable();
+        }
+
         public void Dispose()
         {
             _provider.Dispose();
@@ -36,7 +47,7 @@ namespace Ant.Models.DB
             _provider.Database.GetCollection<T>().Insert(item);
         }
 
-        public void Update<T>(T item) where T : class, new()
+        public void Upsert<T>(T item) where T : class, new()
         {
             _provider.Database.GetCollection<T>().Save(item);
         }
