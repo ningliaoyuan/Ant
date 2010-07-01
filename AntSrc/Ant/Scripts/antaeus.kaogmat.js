@@ -13,7 +13,7 @@ var Register = $("#DivRegister").overlay({
 });
 //俩个Popup的四个触发方式
 $("#LinkLogon").click(function(e){Logon.overlay().load();});
-$("#LinkRegister").click(function(e){Register.overlay().load();});
+$(".LinkRegister").click(function(e){Register.overlay().load();});
 $("#LinkRegister2").click(function(e){Logon.overlay().close();Register.overlay().load();});
 
 //提交登录
@@ -55,7 +55,6 @@ $("#InpUsername, #InpPassword").blur(function(){
 	}
 });
 
-//提交忘记密码的ajax请求
 
 
 });

@@ -9,7 +9,7 @@
 	<div class="box2 forget-password">
     	<div class="box-title1">忘记密码</div>
     	<div class="box-content">
-        	<p>请在下面输入您注册时使用的邮箱，我们将向您的邮箱发送确认邮件。如果您还没有账户，请点击<a id="LinkRegister">这里</a>注册。</p>
+        	<p>请在下面输入您注册时使用的邮箱，我们将向您的邮箱发送确认邮件。如果还没有账户，请点击<a class="LinkRegister">这里</a>注册。</p>
             <% using (Html.BeginForm()) { %>
         	<%: Html.ValidationSummary(true, "Send password email was unsuccessful. Please correct the errors and try again.") %>
         	<div class="formstyle">

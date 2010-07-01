@@ -10,6 +10,6 @@
   else
   { %>
 	<a id="LinkLogon" rel="#DivLogon">登录</a>
-    <a id="LinkRegister">注册</a>
+    <a class="LinkRegister">注册</a>
 <%}
 }%>
