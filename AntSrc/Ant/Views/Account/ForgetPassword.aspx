@@ -14,13 +14,12 @@
                 <div class="item">
                     <div class="title">注册邮箱<span>*</span></div>
                     <div class="detail">
-                        <%: Html.TextBoxFor(m => m.Email, new { @class = "inp inp1" })%>
-                        
+                        <%: Html.TextBoxFor(m => m.Email, new { @class = "inp inp1" })%>                        
                         <%if (!MvcHtmlString.IsNullOrEmpty(Html.ValidationSummary()))
                           { %>
                             <div class="blank5"></div>
                             <div class="warn">
-                                <%: Html.ValidationSummary(true, "Send password email was unsuccessful. Please correct the errors and try again.")%>
+                                <%: Html.ValidationSummary(true, "发送邮件发生了错误，请重试一次，如果还有问题，请报告管理员")%>
                                 <%: Html.ValidationMessageFor(m => m.Email)%>
                             </div> 
                         <%} %>                                
