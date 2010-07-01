@@ -26,6 +26,7 @@ a:hover{ color:#ff0000; text-decoration:underline;}
 .nav .search input[type='text']{ border:1px solid #ccc; background-color:#f8f8f8; height:24px; width:200px;}
 
 .btn{ font-size:12px; font-weight:bold; line-height:12px; padding:3px;}
+.btn2{ font-size:14px; font-weight:bold; line-height:14px; padding:3px;}
 .btn-green { border:1px solid #588624; background-color:#80b91c; border-bottom:1px solid #455f08;  border-right:1px solid #455f08; color:#fff; cursor:pointer;}
 .btn-gray  { border:1px solid #c4c4c4; background-color:#f1f1f1; border-bottom:1px solid #8a8a8a;  border-right:1px solid #8a8a8a; color:#444; cursor:pointer;}
 .btn-blue  { border:1px solid #246686; background-color:#1c97b9; border-bottom:1px solid #08525f;  border-right:1px solid #08525f; color:#fff; cursor:pointer;}
@@ -51,3 +52,5 @@ a:hover{ color:#ff0000; text-decoration:underline;}
 #DivLogon{ display:none; width:350px;}
 #DivRegister{ display:none; width:350px;}
 #DivForgetPassword{ display:none; width:350px;}
+
+.forget-password p{ font-size:14px;}
