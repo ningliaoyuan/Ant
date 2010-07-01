@@ -19,7 +19,6 @@
                           { %>
                             <div class="blank5"></div>
                             <div class="warn">
-                                <%: Html.ValidationSummary(true, "发送邮件发生了错误，请重试一次，如果还有问题，请报告管理员")%>
                                 <%: Html.ValidationMessageFor(m => m.Email)%>
                             </div> 
                         <%} %>                                
