@@ -4,7 +4,7 @@
 <div class="title">登录</div>
 <div class="subtitle">登录kaoGMAT来保存做题记录</div>
 <form class="FormPopup">
-    <div><label>邮箱/昵称：</label><a id="LinkRegister2">注册新用户</a></div>
+    <div><label>邮箱/昵称：</label><a id="LinkRegister">注册新用户</a></div>
     <div><input type="text" class="inp" id="InpUsername" /></div>
     <div class="wrong hidden">用户昵称或邮箱地址不存在</div>
     <div><label>密码：</label><a id="LinkForgetPassword">忘记密码了？</a></div>

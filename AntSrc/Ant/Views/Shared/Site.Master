@@ -20,8 +20,7 @@
 <div class="header">
 	<div class="logo"><a href="http://www.kaogmat.com">考GMAT</a></div>
    	<div class="status">
-    	<a class="logon" id="LinkLogon">登录</a>
-        <a class="register" id="LinkRegister">注册</a>
+    	<% Html.RenderPartial("~/Views/Shared/LogOnUserControl.ascx", string.Empty); %>
     </div>
     <div class="clear"></div>    
 </div>
