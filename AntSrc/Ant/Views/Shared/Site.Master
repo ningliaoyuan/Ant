@@ -1,7 +1,7 @@
 ﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
 <%@ Register src="../Popup/PopupLogon.ascx" tagname="PopupLogon" tagprefix="uc1" %>
 <%@ Register src="../Popup/PopupRegister.ascx" tagname="PopupRegister" tagprefix="uc2" %>
-<%@ Register src="../Popup/PopupForgetPassword.ascx" tagname="PopupForgetPassword" tagprefix="uc3" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -42,6 +42,6 @@
 
 <div id="DivLogon" class="popup"><uc1:PopupLogon ID="PopupLogon1" runat="server" /></div>
 <div id="DivRegister" class="popup"><uc2:PopupRegister ID="PopupRegister1" runat="server" /></div>
-<div id="DivForgetPassword" class="popup"><uc3:PopupForgetPassword ID="PopupForgetPassword1" runat="server" /></div>
+
 </body>
 </html>

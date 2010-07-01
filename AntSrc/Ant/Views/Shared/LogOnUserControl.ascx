@@ -1,9 +1,11 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl" %>
 <%if (Request.IsAuthenticated)
   { %>
-    <a href="#">收藏夹</a>
-    <a href="#">浏览记录</a>
-    <a href="#">退出登录</a>
+    <span>欢迎你，Lanslot</span>
+    <a href="/Account/Favorite/">收藏夹</a>
+    <a href="/Account/Record/">浏览记录</a>
+    <a href="/Account/ChangePassword/">修改密码</a>
+    <a href="/Account/Logout/">退出登录</a>
 <%}
   else
   { %>

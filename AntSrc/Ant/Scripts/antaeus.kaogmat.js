@@ -1,46 +1,23 @@
 var g_param = {};
+//Popup的全局变量设计
+g_param.overlay_mask = {color:"#000",loadSpeed:200,opacity:0.5};
 jQuery(document).ready(function($) {
 
 $("*[ajaxstatus='loading']").hide();
 
-var Logon = $("#DivLogon").overlay({
-	top: 150,
-	mask: {color:"#000",loadSpeed:200,opacity:0.5},
-	closeOnClick: false
-});
+//定义俩个Popup
+var Logon = $("#DivLogon").overlay({top:150,mask:g_param.overlay_mask,closeOnClick:false});
 var Register = $("#DivRegister").overlay({
-	top: 100,
-	mask: {color:"#000",loadSpeed:200,opacity:0.5},
-	closeOnClick: false,
-	onLoad:function(){
-		if($("#exposeMask:visible").length<=0){
-			$("#exposeMask").show();
-			$("#DivRegister").css("z-index","9999");
-		}
-	}
+	top:100,mask:g_param.overlay_mask,closeOnClick: false,
+	onLoad:function(){if($("#exposeMask:visible").length<=0){$("#exposeMask").show();$("#DivRegister").css("z-index","9999");}}
 });
-var ForgetPassword = $("#DivForgetPassword").overlay({
-	top: 150,
-	mask: {color:"#000",loadSpeed:200,opacity:0.5},
-	closeOnClick: false,
-	onLoad:function(){
-		$("#exposeMask").show();
-		$("#DivForgetPassword").css("z-index","9999");
-	}
-});
+//俩个Popup的四个触发方式
 $("#LinkLogon").click(function(e){Logon.overlay().load();});
 $("#LinkRegister").click(function(e){Register.overlay().load();});
+$("#LinkRegister2").click(function(e){Logon.overlay().close();Register.overlay().load();});
 
-$("#LinkForgetPassword").click(function(e){
-	Logon.overlay().close();
-	ForgetPassword.overlay().load();
-});
-$("#LinkRegister2").click(function(e){
-	Logon.overlay().close();	
-	Register.overlay().load();
-});
 //提交登录
-$("#BtnLogonSubmit").click(function(e){
+var LogonSubmit = function(){
 	var Username = $.trim($("#InpUsername").val());
 	var Password = $.trim($("#InpPassword").val());
 	var RememberMe = ($("#ChkRemember:checked").length>0)?1:0;
@@ -66,7 +43,9 @@ $("#BtnLogonSubmit").click(function(e){
 	}else{
 		$("#DivLogonEmpty").show();
 	}
-});
+};
+$("#BtnLogonSubmit").bind("click",LogonSubmit);
+$("#InpUsername, #InpPassword").keyup(function(event){if(event.keyCode==13)LogonSubmit();});
 //当光标在文本输入框内失去焦点，做为空判断
 $("#InpUsername, #InpPassword").blur(function(){
 	var Username = $.trim($("#InpUsername").val());
@@ -75,5 +54,8 @@ $("#InpUsername, #InpPassword").blur(function(){
 		$("#DivLogonEmpty").hide();
 	}
 });
+
+//提交忘记密码的ajax请求
+
 
 });
