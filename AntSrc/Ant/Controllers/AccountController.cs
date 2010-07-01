@@ -166,7 +166,7 @@ namespace Ant.Controllers
                     var user = Membership.GetUser(username, false);
                     if (user.Email == model.Email)
                     {
-                        EmailAdmin.SendPassword(user.Email, user.UserName, user.ResetPassword());
+                        EmailAdmin.SendResetPasswordLink(user.Email, user.UserName);
                         if (!String.IsNullOrEmpty(returnUrl))
                         {
                             return Redirect(returnUrl);
@@ -195,6 +195,32 @@ namespace Ant.Controllers
         public ActionResult ForgetPasswordDone(ForgetPasswordModel model)
         {
             return View(model);
+        }
+
+        public ActionResult ResetPassword(ResetPasswordModel m, int i)
+        {
+            return View(m);
+        }
+
+        [HttpPost]
+        public ActionResult ResetPassword(ResetPasswordModel m)
+        {
+            if (ModelState.IsValid && m.Validate())
+            {
+                var user = Membership.GetUser(m.username);
+                
+                if (user.ChangePassword(user.ResetPassword(),m.NewPassword))
+                {
+                    return RedirectToAction("ChangePasswordSuccess");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "出错啦，联系管理员");
+                }
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(m);
         }
 
     }

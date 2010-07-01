@@ -73,6 +73,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ResetPasswordModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +88,7 @@
     <Content Include="Scripts\antaeus.kaogmat.js" />
     <Content Include="Scripts\jquery-1.4.2.min.js" />
     <Content Include="Scripts\jquery.tools.min.js" />
+    <Content Include="Views\Account\ResetPassword.aspx" />
     <Content Include="Views\Popup\PopupForgetPassword.ascx" />
     <Content Include="Views\Account\ForgetPassword.aspx" />
     <Content Include="Views\Account\ForgetPasswordDone.aspx" />
