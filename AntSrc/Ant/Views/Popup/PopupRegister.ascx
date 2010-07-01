@@ -6,7 +6,7 @@
 <form class="FormPopup">
     <div><label>登录用邮箱地址：</label></div>
     <div><input type="text" class="inp" /></div>
-    <div class="wrong">邮箱地址不符合规范</div>
+    <div class="wrong hidden">邮箱地址不符合规范</div>
     <div><label>用户昵称：</label></div>
     <div><input type="text" class="inp" /></div>
     <div class="tip">最多8个中文字符或者16个英文字符</div>
@@ -15,6 +15,6 @@
     <div class="tip">最少6个字符</div>
     <div><label>确认密码：</label></div>
     <div><input type="password" class="inp" /></div>
-    <div class="wrong">确认密码与登录密码输入不一致</div>
-    <div><button class="btn btn-gray">确认注册</button></div>
+    <div class="wrong hidden">确认密码与登录密码输入不一致</div>
+    <div><button class="btn btn-blue">确认注册</button></div>
 </form>

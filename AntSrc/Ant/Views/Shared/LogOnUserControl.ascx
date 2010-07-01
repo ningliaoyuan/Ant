@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl" %>
+
 <%if (Request.IsAuthenticated)
   { %>
     <span>欢迎你，Lanslot</span>
@@ -9,7 +10,6 @@
 <%}
   else
   { %>
-	<a id="LinkLogon" rel="#DivLogon">登录</a>
+	<a class="LinkLogon">登录</a>
     <a class="LinkRegister">注册</a>
-<%}
-}%>
+<%}%>
