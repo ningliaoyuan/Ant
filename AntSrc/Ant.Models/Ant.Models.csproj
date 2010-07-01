@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\EmailAdmin.cs" />
+    <Compile Include="Common\Cryptor.cs" />
     <Compile Include="DB\IDProvider.cs" />
     <Compile Include="DB\MongoSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
