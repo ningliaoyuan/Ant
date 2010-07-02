@@ -1,16 +1,21 @@
-﻿using Ant.Models.Common;
+﻿using Ant.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting.Web;
 
 namespace Ant.Tests
 {
+    
+    
     /// <summary>
-    ///This is a test class for EncryptorTest and is intended
-    ///to contain all EncryptorTest Unit Tests
+    ///This is a test class for ResetPasswordModelTest and is intended
+    ///to contain all ResetPasswordModelTest Unit Tests
     ///</summary>
     [TestClass()]
-    public class EncryptorTest
+    public class ResetPasswordModelTest
     {
+
+
         private TestContext testContextInstance;
 
         /// <summary>
@@ -61,29 +66,19 @@ namespace Ant.Tests
 
 
         /// <summary>
-        ///A test for Encrypt
+        ///A test for CookResetHash
         ///</summary>
         [TestMethod()]
-        public void EncryptTest()
+        public void CookResetHashTest()
         {
-            string encryptString = "FooString|2010-07-01";
-            string actual;
-            actual = Encryptor.Encrypt(encryptString);
-            Assert.AreNotEqual(encryptString, actual);
-        }
+            string userName = "FooUserName";
 
-        /// <summary>
-        ///A test for Decrypt
-        ///</summary>
-        [TestMethod()]
-        public void DecryptTest()
-        {
-            string encryptString = "FooString|2010-07-01";
-
-            string decryptString = Encryptor.Encrypt(encryptString);
             string actual;
-            actual = Encryptor.Decrypt(decryptString);
-            Assert.AreEqual(encryptString, actual);
+            actual = ResetPasswordModel.CookResetHash(userName);
+            Assert.AreNotEqual(userName, actual);
+
+            Assert.IsTrue(ResetPasswordModel.ValidateResetHash(actual, userName));
+            Assert.IsFalse(ResetPasswordModel.ValidateResetHash(actual, "anotherUserName"));
         }
     }
 }

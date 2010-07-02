@@ -166,7 +166,7 @@ namespace Ant.Controllers
                     var user = Membership.GetUser(username, false);
                     if (user.Email == model.Email)
                     {
-                        EmailAdmin.SendResetPasswordLink(user.Email, user.UserName);
+                        EmailAdmin.SendResetPasswordLink(user.Email, user.UserName, ResetPasswordModel.CookResetHash(user.UserName));
                         if (!String.IsNullOrEmpty(returnUrl))
                         {
                             return Redirect(returnUrl);
@@ -197,9 +197,10 @@ namespace Ant.Controllers
             return View(model);
         }
 
-        public ActionResult ResetPassword(ResetPasswordModel m, int i)
+        public ActionResult ResetPassword(string username, string k)
         {
-            return View(m);
+            var m = new ResetPasswordModel() { username = username, k = k };
+            return View(m);            
         }
 
         [HttpPost]

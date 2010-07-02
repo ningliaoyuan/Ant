@@ -73,7 +73,7 @@ namespace Ant.Tests
             string targetEmail = "ningliaoyuan@gmail.com"; // TODO: Initialize to an appropriate value
             string userName = "Lynn"; // TODO: Initialize to an appropriate value
             string password = "new password"; // TODO: Initialize to an appropriate value
-            EmailAdmin.SendPassword(targetEmail, userName, password);
+            //EmailAdmin.SendPassword(targetEmail, userName, password);
         }
     }
 }
