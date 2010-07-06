@@ -44,6 +44,9 @@ input,button,textarea,select{*font-size: 100%;}
 
 .box-content{ padding:15px;}
 .box-title1{ padding:10px 15px; border-bottom:2px solid #DDD; font-size:18px; font-weight:bold;}
+.box-title2{ padding:10px 15px; border-bottom:1px solid #DDD; background-color:#f1f1f1;}
+.box-tip{ color:#333; background-color:#fdfbee; border:1px solid #FC0; margin-bottom:10px; padding:5px; font-size:14px; text-align:center;}
+.box-tip b{ color:#F60;}
 
 /* Define default form style =========================================================================================================================*/
 .formstyle .item{ padding:10px 0px; border-bottom:1px dotted #CCC; font-size:14px; *padding-bottom:0;}

@@ -54,3 +54,11 @@ a:hover{ color:#ff0000; text-decoration:underline;}
 #DivForgetPassword{ display:none; width:350px;}
 
 .forget-password p{ font-size:14px;}
+
+.classify .fliter .label{ float:left; height:20px; line-height:20px;}
+.classify .fliter ul{ float:left;}
+.classify .fliter ul li{ float:left; width:70px; text-align:center; height:20px; line-height:20px;}
+.classify .fliter ul li.selected{background-color:#fdfbee; border:1px solid #FC0;}
+.list .sort span{ float:left; padding-right:5px;}
+.list .sort ul{ float:left;}
+.list .sort ul li{ float:left; padding-right:10px;}
