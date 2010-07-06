@@ -10,7 +10,7 @@ namespace Ant.Models
     {
         public static ActionResult AjaxOK(this Controller control)
         {
-            return Content("OK");
+            return Content("ok");
         }
 
         public static ActionResult AjaxError(this Controller control, string message)
