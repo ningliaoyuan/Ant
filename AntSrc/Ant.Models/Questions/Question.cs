@@ -8,7 +8,6 @@ namespace Ant.Models.Questions
 {
     public class Question
     {
-
         // 题目数据：
         // 1. 编号
         // 2. 内容
@@ -25,12 +24,29 @@ namespace Ant.Models.Questions
         // 13. (摘要)
         // 14. (创建人) 
         public ObjectId _id { set; get; }
-        public EntityInfo Info;
 
-        public Int32 Number { get; set; }
+        public int Number { get; set; }
         public string Content { get; set; }
-        public string Source { get; set; }
         public string Ask { get; set; }
         public string Options { get; set; }
+        public string Solution { get; set; }
+        public string Answer { get; set; }
+
+
+        public string Source { get; set; }
+        public string Type { get; set; }
+
+        public decimal Rate { get; set; }
+        public int ViewCount { get; set; }
+        public int CommentsCount { get; set; }
+
+        public EntityInfo Info { get; set; }
+
+        public Question()
+        {
+            Rate = 3;
+            ViewCount = 0;
+            CommentsCount = 0;
+        }
     }
 }

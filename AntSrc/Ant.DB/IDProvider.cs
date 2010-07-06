@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Runtime.Caching;
 
-namespace Ant.Models.DB
+namespace Ant.DB
 {
     public class IDProvider
     {

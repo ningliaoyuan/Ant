@@ -74,12 +74,15 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\AjaxResult.cs" />
+    <Compile Include="Models\Paging.cs" />
     <Compile Include="Models\ResetPasswordModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\SC\Views\Question\Create.aspx" />
+    <Content Include="Areas\SC\Views\Question\Details.aspx" />
     <Content Include="Areas\SC\Views\Question\Index.aspx" />
+    <Content Include="Areas\SC\Views\Question\Index2.aspx" />
     <Content Include="Content\Images\BG_GMAT.jpg" />
     <Content Include="Content\Images\Logo.png" />
     <Content Include="Content\Style\common.css" />
@@ -131,6 +134,10 @@
     <Folder Include="Areas\SC\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ant.DB\Ant.DB.csproj">
+      <Project>{73A1703F-B7E5-4299-A9B5-F24BEA59F094}</Project>
+      <Name>Ant.DB</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ant.Models\Ant.Models.csproj">
       <Project>{417FF3C8-03AD-4DA5-94AC-FF5DC879C404}</Project>
       <Name>Ant.Models</Name>
@@ -154,7 +161,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>63638</DevelopmentServerPort>
+          <DevelopmentServerPort>29377</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

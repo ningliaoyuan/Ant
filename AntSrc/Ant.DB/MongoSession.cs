@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Norm;
-using Ant.Models.Questions;
 using Norm.Responses;
 using Norm.Configuration;
 using Norm.Collections;
 
-namespace Ant.Models.DB
+namespace Ant.DB
 {
     public class MongoSession : IDisposable
     {
@@ -22,14 +21,14 @@ namespace Ant.Models.DB
 
         public MongoDatabase DB { get { return this._provider.Database; } }
 
-        public IQueryable<Question> Questions
+        public IQueryable<T> Query<T>()
         {
-            get { return _provider.GetCollection<Question>().AsQueryable(); }
+            return _provider.GetCollection<T>().AsQueryable();
         }
 
         public IMongoCollection<T> GetCollection<T>()
         {
-             return _provider.GetCollection<T>();
+            return _provider.GetCollection<T>();
         }
 
         public IQueryable<T> GetQuery<T>()
@@ -57,9 +56,9 @@ namespace Ant.Models.DB
             _provider.Database.GetCollection<T>().Delete(item);
         }
 
-        //public void Drop<T>()
-        //{
-        //    _provider.Database.DropCollection(MongoConfiguration.GetCollectionName(typeof(T)));
-        //}
+        public void Drop<T>()
+        {
+            _provider.Database.DropCollection(_provider.Database.GetCollection<T>().FullyQualifiedName);
+        }
     }
 }
