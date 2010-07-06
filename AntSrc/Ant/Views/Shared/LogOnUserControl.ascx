@@ -6,7 +6,7 @@
     <a href="/Account/Favorite/">收藏夹</a>
     <a href="/Account/Record/">浏览记录</a>
     <a href="/Account/ChangePassword/">修改密码</a>
-    <a href="/Account/Logout/">退出登录</a>
+    <a href="/Account/Logoff/">退出登录</a>
 <%}
   else
   { %>

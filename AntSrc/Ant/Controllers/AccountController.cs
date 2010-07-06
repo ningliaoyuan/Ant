@@ -36,9 +36,16 @@ namespace Ant.Controllers
         {
             return View();
         }
-
+        /// <summary>
+        /// 1.发送完整的登录表单：
+        /// 发：用户名（邮箱地址或者昵称），密码，是否自动登录
+        /// 回：“ok”or“error:用户密码错误”or“error:邮箱地址不存在”or“error:用户昵称不存在” 
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="returnUrl"></param>
+        /// <returns></returns>
         [HttpPost]
-        public ActionResult AjaxLogOn(LogOnModel model, string returnUrl)
+        public ActionResult AjaxLogOn(LogOnModel model)
         {
             if (ModelState.IsValid)
             {
@@ -49,7 +56,7 @@ namespace Ant.Controllers
                 }
                 else
                 {
-                    return this.AjaxError("The user name or password provided is incorrect.");
+                    return this.AjaxError("用户名不存在或密码输入错误，请重试");
                 }
             }
 
@@ -102,6 +109,37 @@ namespace Ant.Controllers
         {
             ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
             return View();
+        }
+
+        /// <summary>
+        /// 发送完整注册表单：
+        /// 发：邮箱地址，昵称，密码
+        /// 回：“ok”or“error:邮箱地址已经被注册了”or“error:此用户昵称已经被注册了”or“error:邮箱地址不符合规范”or“error:用户昵称最多8个中文字符或者16个英文字符”or“error:密码至少需要6个字符” 
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="returnUrl"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult AjaxRegister(RegisterModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Attempt to register the user
+                MembershipCreateStatus createStatus = MembershipService.CreateUser(model.UserName, model.Password, model.Email);
+
+                if (createStatus == MembershipCreateStatus.Success)
+                {
+                    FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
+                    return this.AjaxOK();
+                }
+                else
+                {
+                    return this.AjaxError(AccountValidation.ErrorCodeToString(createStatus));
+                }
+            }
+
+            // If we got this far, something failed, redisplay form
+            return this.Ajax();
         }
 
         [HttpPost]
@@ -241,6 +279,47 @@ namespace Ant.Controllers
 
             // If we got this far, something failed, redisplay form
             return View(m);
+        }
+
+
+        /// <summary>
+        /// 用户邮箱地址验证：
+        /// <summary>
+        /// 用户邮箱地址验证：
+        /// 发：邮箱地址
+        /// 回：“ok”or“error:邮箱地址已经被注册了”or“error:邮箱地址不符合规范” 
+        /// </summary>
+        public ActionResult AjaxEmailCheck(string email)
+        {
+            var user = Membership.GetUserNameByEmail(email);
+            if(string.IsNullOrEmpty(user))
+            {
+                return this.AjaxOK();
+            }
+            else
+            {
+                return this.AjaxError("邮箱地址已经被注册了");
+            }
+        }
+
+        /// <summary>
+        /// 用户昵称验证：
+        /// <summary>
+        /// 用户昵称验证：
+        /// 发：昵称 
+        /// 回：“ok”or“error:此用户昵称已经被注册了”or“error:用户昵称最多8个中文字符或者16个英文字符” 
+        /// </summary>
+        public ActionResult AjaxNickCheck(string username)
+        {
+            var user = Membership.GetUser(username, false);
+            if (user == null)
+            {
+                return this.AjaxOK();
+            }
+            else
+            {
+                return this.AjaxError("此用户昵称已经被注册了");
+            }
         }
 
     }
