@@ -26,7 +26,26 @@ namespace Ant.Models
             }
             else
             {
-                var msg = string.Join(";", control.ModelState.Values.Select(m => m.Value.AttemptedValue).ToArray());
+                var msg = string.Join(";", 
+                            control.ModelState.Values.Select(
+                                m =>
+                                    string.Join(";", m.Errors.Select(me =>
+                                        me.ErrorMessage).ToArray())
+                                ).ToArray()
+                          );
+
+                foreach (ModelState modelState in control.ModelState.Values)
+                {
+                    foreach (ModelError modelError in modelState.Errors)
+                    {
+                        string errorText = modelError.ErrorMessage;
+                        if (!String.IsNullOrEmpty(errorText))
+                        {
+                            TagBuilder listItem = new TagBuilder("li");
+                            listItem.SetInnerText(errorText);
+                        }
+                    }
+                }
                 return control.AjaxError(msg);
             }
         }
