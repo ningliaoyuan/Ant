@@ -38,6 +38,25 @@ namespace Ant.Controllers
         }
 
         [HttpPost]
+        public ActionResult AjaxLogOn(LogOnModel model, string returnUrl)
+        {
+            if (ModelState.IsValid)
+            {
+                if (MembershipService.ValidateUser(model.UserName, model.Password))
+                {
+                    FormsService.SignIn(model.UserName, model.RememberMe);
+                    return this.AjaxOK();
+                }
+                else
+                {
+                    return this.AjaxError("The user name or password provided is incorrect.");
+                }
+            }
+
+            return this.Ajax();
+        }
+
+        [HttpPost]
         public ActionResult LogOn(LogOnModel model, string returnUrl)
         {
             if (ModelState.IsValid)
