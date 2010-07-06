@@ -56,7 +56,7 @@ namespace Ant.Controllers
                 }
                 else
                 {
-                    return this.AjaxError("The user name or password provided is incorrect.");
+                    return this.AjaxError("用户名不存在或密码输入错误，请重试");
                 }
             }
 
@@ -289,7 +289,7 @@ namespace Ant.Controllers
         /// 发：邮箱地址
         /// 回：“ok”or“error:邮箱地址已经被注册了”or“error:邮箱地址不符合规范” 
         /// </summary>
-        public ActionResult AjaxValidateEmail(string email)
+        public ActionResult AjaxEmailCheck(string email)
         {
             var user = Membership.GetUserNameByEmail(email);
             if(string.IsNullOrEmpty(user))
@@ -309,7 +309,7 @@ namespace Ant.Controllers
         /// 发：昵称 
         /// 回：“ok”or“error:此用户昵称已经被注册了”or“error:用户昵称最多8个中文字符或者16个英文字符” 
         /// </summary>
-        public ActionResult AjaxValidateEmail(string username)
+        public ActionResult AjaxNickCheck(string username)
         {
             var user = Membership.GetUser(username, false);
             if (user == null)
