@@ -58,7 +58,21 @@ a:hover{ color:#ff0000; text-decoration:underline;}
 .classify .fliter .label{ float:left; height:20px; line-height:20px;}
 .classify .fliter ul{ float:left;}
 .classify .fliter ul li{ float:left; width:70px; text-align:center; height:20px; line-height:20px;}
-.classify .fliter ul li.selected{background-color:#fdfbee; border:1px solid #FC0;}
+.classify .fliter ul li.selected{color:#0479a7; background-color:#cadfec; border:1px solid #0479a7;}
 .list .sort span{ float:left; padding-right:5px;}
 .list .sort ul{ float:left;}
 .list .sort ul li{ float:left; padding-right:10px;}
+
+.list .item{ border:1px solid #f1f1f1; padding:5px 10px 10px; margin-bottom:10px;}
+.list .item .info{ line-height:26px; border-bottom:1px solid #ccc; margin-bottom:10px;}
+.list .item .info a{ display:block; float:left; font-weight:bold; font-size:14px; width:80px;}
+.list .item .info i{ font-style:normal; display:block; float:left; padding-right:15px; color:#aaa;}
+.list .item .info i span, .list .item .info b span{ color:#000;}
+.list .item .info b{ display:block; float:right; color:#aaa; font-weight:normal;}
+.list .item .value{ float:left; width:80px;}
+.list .item .value b{ display:block; float:left; font-size:24px; color:#5b9401;}
+.list .item .value span{ display:block; float:left; color:#aaa; padding-top:11px;}
+.list .item .value i{ clear:both; font-style:normal; color:#666; display:block;}
+.list .item .text{ float:left; height:50px; width:565px; overflow:hidden;}
+.list .item-hover{ border:1px solid #0479a7;}
+

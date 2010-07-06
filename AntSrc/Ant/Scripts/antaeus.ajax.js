@@ -25,6 +25,7 @@ ajaxFunction["Logon"] = function(param, callback){$.post("/Account/AjaxLogon/",{
 ajaxFunction["Register"] = function(param, callback){$.post("/Account/AjaxRegister/",{Email:param.email, Username: param.nick, Password: param.psd}, callback);};
 ajaxFunction["EmailCheck"] = function (param, callback) { $.get("/Account/AjaxEmailCheck", { Email: param.email }, callback); };
 ajaxFunction["NickCheck"] = function (param, callback) { $.get("/Account/AjaxNickCheck", { Username: param.nick }, callback); };
+ajaxFunction["LogonStatus"] = function (param, callback) { $.get("/Account/", callback); };
 
 //Refresh函数用于调用AJAX来自我刷新
 function ajaxRefresh(obj, param, callback) {

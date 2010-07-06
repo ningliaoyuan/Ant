@@ -47,16 +47,47 @@
             </div>
         </div>
     	<div class="box-content">
-			<div class="item">
+			<div class="item item-hover">
             	<div class="info">
                 	<a href="#">SC-10203</a>
                     <i>来自于<span>GWD</span></i>
                     <i>浏览量<span>10000</span></i>
                     <i>回复数<span>10000</span></i>
                     <b>更新于<span>2010年7月1日</span></b>
+                    <div class="clear"></div>
                 </div>
+                
                 <div class="value"><b>3.9</b><span>/5</span><i>题目价值</i></div>
-                <p class="text">Your use of Google's products, software, services and web sites (referred to collectively as the "Services" in this document and excluding any services provided to you by Google under a separate written agreement) is subject to the terms of a legal agreement between you and Google. "Google" means Google Inc., whose principal place of business is at 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States. This document explains how the agreement is made up, and sets out some of the terms of that agreement.</p>
+                <div class="text"><p>Your use of Google's products, software, services and web sites (referred to collectively as the "Services" in this document and excluding any services provided to you by Google under a separate written agreement) is subject to the terms of a legal agreement between you and Google. "Google" means Google Inc., whose principal place of business is at 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States. This document explains how the agreement is made up, and sets out some of the terms of that agreement.</p></div>
+            	<div class="clear"></div>
+            </div>
+            <div class="item">
+            	<div class="info">
+                	<a href="#">SC-10203</a>
+                    <i>来自于<span>GWD</span></i>
+                    <i>浏览量<span>10000</span></i>
+                    <i>回复数<span>10000</span></i>
+                    <b>更新于<span>2010年7月1日</span></b>
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="value"><b>3.9</b><span>/5</span><i>题目价值</i></div>
+                <div class="text"><p>Your use of Google's products, software, services and web sites (referred to collectively as the "Services" in this document and excluding any services provided to you by Google under a separate written agreement) is subject to the terms of a legal agreement between you and Google. "Google" means Google Inc., whose principal place of business is at 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States. This document explains how the agreement is made up, and sets out some of the terms of that agreement.</p></div>
+            	<div class="clear"></div>
+            </div>
+            <div class="item">
+            	<div class="info">
+                	<a href="#">SC-10203</a>
+                    <i>来自于<span>GWD</span></i>
+                    <i>浏览量<span>10000</span></i>
+                    <i>回复数<span>10000</span></i>
+                    <b>更新于<span>2010年7月1日</span></b>
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="value"><b>3.9</b><span>/5</span><i>题目价值</i></div>
+                <div class="text"><p>Your use of Google's products, software, services and web sites (referred to collectively as the "Services" in this document and excluding any services provided to you by Google under a separate written agreement) is subject to the terms of a legal agreement between you and Google. "Google" means Google Inc., whose principal place of business is at 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States. This document explains how the agreement is made up, and sets out some of the terms of that agreement.</p></div>
+            	<div class="clear"></div>
             </div>
         </div>    
     </div>
