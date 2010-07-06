@@ -1,17 +1,18 @@
-﻿using Ant.Models.Account;
+﻿using Ant.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting.Web;
 
 namespace Ant.Tests
 {
     
     
     /// <summary>
-    ///This is a test class for EmailAdminTest and is intended
-    ///to contain all EmailAdminTest Unit Tests
+    ///This is a test class for ResetPasswordModelTest and is intended
+    ///to contain all ResetPasswordModelTest Unit Tests
     ///</summary>
     [TestClass()]
-    public class EmailAdminTest
+    public class ResetPasswordModelTest
     {
 
 
@@ -65,15 +66,19 @@ namespace Ant.Tests
 
 
         /// <summary>
-        ///A test for SendPassword
+        ///A test for CookResetHash
         ///</summary>
         [TestMethod()]
-        public void SendPasswordTest()
+        public void CookResetHashTest()
         {
-            string targetEmail = "ningliaoyuan@gmail.com"; // TODO: Initialize to an appropriate value
-            string userName = "Lynn"; // TODO: Initialize to an appropriate value
-            string password = "new password"; // TODO: Initialize to an appropriate value
-            //EmailAdmin.SendPassword(targetEmail, userName, password);
+            string userName = "FooUserName";
+
+            string actual;
+            actual = ResetPasswordModel.CookResetHash(userName);
+            Assert.AreNotEqual(userName, actual);
+
+            Assert.IsTrue(ResetPasswordModel.ValidateResetHash(actual, userName));
+            Assert.IsFalse(ResetPasswordModel.ValidateResetHash(actual, "anotherUserName"));
         }
     }
 }

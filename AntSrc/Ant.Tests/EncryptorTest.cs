@@ -1,20 +1,16 @@
-﻿using Ant.Models.Account;
+﻿using Ant.Models.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace Ant.Tests
 {
-    
-    
     /// <summary>
-    ///This is a test class for EmailAdminTest and is intended
-    ///to contain all EmailAdminTest Unit Tests
+    ///This is a test class for EncryptorTest and is intended
+    ///to contain all EncryptorTest Unit Tests
     ///</summary>
     [TestClass()]
-    public class EmailAdminTest
+    public class EncryptorTest
     {
-
-
         private TestContext testContextInstance;
 
         /// <summary>
@@ -65,15 +61,29 @@ namespace Ant.Tests
 
 
         /// <summary>
-        ///A test for SendPassword
+        ///A test for Encrypt
         ///</summary>
         [TestMethod()]
-        public void SendPasswordTest()
+        public void EncryptTest()
         {
-            string targetEmail = "ningliaoyuan@gmail.com"; // TODO: Initialize to an appropriate value
-            string userName = "Lynn"; // TODO: Initialize to an appropriate value
-            string password = "new password"; // TODO: Initialize to an appropriate value
-            //EmailAdmin.SendPassword(targetEmail, userName, password);
+            string encryptString = "FooString|2010-07-01";
+            string actual;
+            actual = Encryptor.Encrypt(encryptString);
+            Assert.AreNotEqual(encryptString, actual);
+        }
+
+        /// <summary>
+        ///A test for Decrypt
+        ///</summary>
+        [TestMethod()]
+        public void DecryptTest()
+        {
+            string encryptString = "FooString|2010-07-01";
+
+            string decryptString = Encryptor.Encrypt(encryptString);
+            string actual;
+            actual = Encryptor.Decrypt(decryptString);
+            Assert.AreEqual(encryptString, actual);
         }
     }
 }
