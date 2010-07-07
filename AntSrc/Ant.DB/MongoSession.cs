@@ -6,6 +6,7 @@ using Norm;
 using Norm.Responses;
 using Norm.Configuration;
 using Norm.Collections;
+using System.Configuration;
 
 namespace Ant.DB
 {
@@ -13,10 +14,16 @@ namespace Ant.DB
     {
 
         private readonly Mongo _provider;
+        static MongoSession()
+        {
+            string key = ConfigurationManager.AppSettings["MongoDBConnection"];
+            ConnectionString = ConfigurationManager.ConnectionStrings[key].ConnectionString;
+        }
+        static readonly string ConnectionString;
 
         public MongoSession()
         {
-            _provider = Mongo.Create("mongodb://127.0.0.1/NormTests?strict=false");
+            _provider = Mongo.Create(ConnectionString);
         }
 
         public MongoDatabase DB { get { return this._provider.Database; } }
@@ -29,11 +36,6 @@ namespace Ant.DB
         public IMongoCollection<T> GetCollection<T>()
         {
             return _provider.GetCollection<T>();
-        }
-
-        public IQueryable<T> GetQuery<T>()
-        {
-            return _provider.GetCollection<T>().AsQueryable();
         }
 
         public void Dispose()

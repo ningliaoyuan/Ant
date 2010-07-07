@@ -52,6 +52,8 @@
     <Compile Include="Questions\Comments.cs" />
     <Compile Include="Questions\EntityInfo.cs" />
     <Compile Include="Questions\Question.cs" />
+    <Compile Include="Questions\QuestionSource.cs" />
+    <Compile Include="Questions\QuestionType.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

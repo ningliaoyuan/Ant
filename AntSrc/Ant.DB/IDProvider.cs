@@ -48,7 +48,7 @@ namespace Ant.DB
                 {
                     using (var s = new MongoSession())
                     {
-                        var idItem = (from item in s.GetQuery<IDItem>()
+                        var idItem = (from item in s.Query<IDItem>()
                                       where item.Key == Key
                                       select item).FirstOrDefault();
 
