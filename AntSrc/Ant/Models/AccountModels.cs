@@ -54,7 +54,7 @@ namespace Ant.Models
         public string Email { get; set; }
     }
 
-    [PropertiesMustMatch("Password", "ConfirmPassword", ErrorMessage = "The password and confirmation password do not match.")]
+    [PropertiesMustMatch("Password", "ConfirmPassword", ErrorMessage = "两个密码不一致")]
     public class RegisterModel
     {
         [Required]
@@ -125,17 +125,17 @@ namespace Ant.Models
 
         public bool ValidateUser(string userName, string password)
         {
-            if (String.IsNullOrEmpty(userName)) throw new ArgumentException("Value cannot be null or empty.", "userName");
-            if (String.IsNullOrEmpty(password)) throw new ArgumentException("Value cannot be null or empty.", "password");
+            if (String.IsNullOrEmpty(userName)) throw new ArgumentException("值不能为空.", "userName");
+            if (String.IsNullOrEmpty(password)) throw new ArgumentException("值不能为空.", "password");
 
             return _provider.ValidateUser(userName, password);
         }
 
         public MembershipCreateStatus CreateUser(string userName, string password, string email)
         {
-            if (String.IsNullOrEmpty(userName)) throw new ArgumentException("Value cannot be null or empty.", "userName");
-            if (String.IsNullOrEmpty(password)) throw new ArgumentException("Value cannot be null or empty.", "password");
-            if (String.IsNullOrEmpty(email)) throw new ArgumentException("Value cannot be null or empty.", "email");
+            if (String.IsNullOrEmpty(userName)) throw new ArgumentException("值不能为空.", "userName");
+            if (String.IsNullOrEmpty(password)) throw new ArgumentException("值不能为空.", "password");
+            if (String.IsNullOrEmpty(email)) throw new ArgumentException("值不能为空.", "email");
 
             MembershipCreateStatus status;
             _provider.CreateUser(userName, password, email, null, null, true, null, out status);
@@ -144,9 +144,9 @@ namespace Ant.Models
 
         public bool ChangePassword(string userName, string oldPassword, string newPassword)
         {
-            if (String.IsNullOrEmpty(userName)) throw new ArgumentException("Value cannot be null or empty.", "userName");
-            if (String.IsNullOrEmpty(oldPassword)) throw new ArgumentException("Value cannot be null or empty.", "oldPassword");
-            if (String.IsNullOrEmpty(newPassword)) throw new ArgumentException("Value cannot be null or empty.", "newPassword");
+            if (String.IsNullOrEmpty(userName)) throw new ArgumentException("值不能为空.", "userName");
+            if (String.IsNullOrEmpty(oldPassword)) throw new ArgumentException("值不能为空.", "oldPassword");
+            if (String.IsNullOrEmpty(newPassword)) throw new ArgumentException("值不能为空.", "newPassword");
 
             // The underlying ChangePassword() will throw an exception rather
             // than return false in certain failure scenarios.
@@ -176,7 +176,7 @@ namespace Ant.Models
     {
         public void SignIn(string userName, bool createPersistentCookie)
         {
-            if (String.IsNullOrEmpty(userName)) throw new ArgumentException("Value cannot be null or empty.", "userName");
+            if (String.IsNullOrEmpty(userName)) throw new ArgumentException("值不能为空.", "userName");
 
             FormsAuthentication.SetAuthCookie(userName, createPersistentCookie);
         }
@@ -198,16 +198,16 @@ namespace Ant.Models
             switch (createStatus)
             {
                 case MembershipCreateStatus.DuplicateUserName:
-                    return "Username already exists. Please enter a different user name.";
+                    return "此用户名已被使用！";
 
                 case MembershipCreateStatus.DuplicateEmail:
-                    return "A username for that e-mail address already exists. Please enter a different e-mail address.";
+                    return "此邮箱已被其他用户注册使用！";
 
                 case MembershipCreateStatus.InvalidPassword:
-                    return "The password provided is invalid. Please enter a valid password value.";
+                    return "您输入的密码无效！";
 
                 case MembershipCreateStatus.InvalidEmail:
-                    return "The e-mail address provided is invalid. Please check the value and try again.";
+                    return "您输入的邮箱无效！";
 
                 case MembershipCreateStatus.InvalidAnswer:
                     return "The password retrieval answer provided is invalid. Please check the value and try again.";
@@ -216,16 +216,16 @@ namespace Ant.Models
                     return "The password retrieval question provided is invalid. Please check the value and try again.";
 
                 case MembershipCreateStatus.InvalidUserName:
-                    return "The user name provided is invalid. Please check the value and try again.";
+                    return "您输入的用户名无效！";
 
                 case MembershipCreateStatus.ProviderError:
-                    return "The authentication provider returned an error. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
+                    return "您提供的身份验证出现错误！";
 
                 case MembershipCreateStatus.UserRejected:
-                    return "The user creation request has been canceled. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
+                    return "用户注册请求已经被取消！";
 
                 default:
-                    return "An unknown error occurred. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
+                    return "发生未知的错误！";
             }
         }
     }
@@ -233,7 +233,7 @@ namespace Ant.Models
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
     public sealed class PropertiesMustMatchAttribute : ValidationAttribute
     {
-        private const string _defaultErrorMessage = "'{0}' and '{1}' do not match.";
+        private const string _defaultErrorMessage = "'{0}' 和 '{1}' 不匹配.";
         private readonly object _typeId = new object();
 
         public PropertiesMustMatchAttribute(string originalProperty, string confirmProperty)
@@ -272,7 +272,7 @@ namespace Ant.Models
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
     public sealed class ValidatePasswordLengthAttribute : ValidationAttribute
     {
-        private const string _defaultErrorMessage = "'{0}' must be at least {1} characters long.";
+        private const string _defaultErrorMessage = "'{0}' 至少包含 {1} 个字符.";
         private readonly int _minCharacters = Membership.Provider.MinRequiredPasswordLength;
 
         public ValidatePasswordLengthAttribute()
