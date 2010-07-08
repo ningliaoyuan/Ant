@@ -74,6 +74,7 @@ var RegisterSubmit = function(){
 	var RePassword = $.trim($("#InpPassword3").val());
 	//为空判断
 	if(Email=="" || Nickname=="" || Password=="" || RePassword=="")	{
+		$("#BtnRegisterSubmit").parent().prev().html("所有项都不能为空！");
 		$("#BtnRegisterSubmit").parent().prev().show();
 	}else{
 		//不为空则隐藏为空信息
@@ -112,9 +113,8 @@ var RegisterSubmit = function(){
 								Register.overlay().close();
 							},
 							function(error){
-								//判断这个文本的出错信息里面是用户名错还是密码错
-								var temp = (error.indexOf("密码")>0)?"#InpPassword":"#InpUsername";
-								$(temp).parent().next().html(error).show();
+								$("#BtnRegisterSubmit").parent().prev().html(error);
+								$("#BtnRegisterSubmit").parent().prev().show();
 							}
 						);
 					}
@@ -125,5 +125,35 @@ var RegisterSubmit = function(){
 	}
 };
 $("#BtnRegisterSubmit").bind("click",RegisterSubmit);
+$("#InpEmail").blur(function(){
+	var o = $(this);
+	var v = o.val();
+	if(!/(\S)+[@]{1}(\S)+[.]{1}(\w)+/.test(v)){
+		o.parent().next().html("邮箱地址不符合规范");
+		o.parent().next().show();		
+	}else{
+		ajaxRequest(o,{email:v},function(){o.parent().next().hide();},
+			function(error){
+				o.parent().next().html("邮箱地址已经被注册！");
+				o.parent().next().show();
+			}
+		);
+	}
+});
+$("#InpNickname").blur(function(){
+	var o = $(this);
+	var v = o.val();
+	if(GetStringLength(v)>16){
+		o.parent().next().html("只允许汉字、英文字母、阿拉伯数字，最多8个中文字符或者16个英文字符");
+		o.parent().next().removeClass("tip").addClass("wrong");
+	}else{
+		ajaxRequest(o,{nick:v},function(){o.parent().next().addClass("tip").removeClass("wrong");},
+			function(error){
+				o.parent().next().html("昵称已经被注册！");
+				o.parent().next().show();
+			}
+		);
+	}
+});
 
 });
