@@ -6,6 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <div class="left">
 	<div class="box-tip">题库中共有GMAT&nbsp;SC题目<b>99999</b>道</div>
+    
     <div class="box2 classify">
     	<div class="box-title1">题目筛选</div>
     	<div class="box-content">
@@ -34,6 +35,9 @@
         </div>    
     </div>
     <div class="blank5"></div>
+    <!--如果筛选条件没有找到题目，则显示这个-->
+    <div class="box-tip">在当前的筛选条件中<b>没有找到题目</b><br />请更换筛选条件后再试！</div>
+    <!--如果筛选条件找到题目，则显示这个-->
     <div class="box2 list">
     	<div class="box-title2">
         	<div class="sort">
@@ -47,7 +51,7 @@
             </div>
         </div>
     	<div class="box-content">
-			<div class="item item-hover">
+			<div class="item">
             	<div class="info">
                 	<a href="#">SC-10203</a>
                     <i>来自于<span>GWD</span></i>

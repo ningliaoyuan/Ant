@@ -61,7 +61,8 @@ a:hover{ color:#ff0000; text-decoration:underline;}
 .classify .fliter ul li.selected{color:#0479a7; background-color:#cadfec; border:1px solid #0479a7;}
 .list .sort span{ float:left; padding-right:5px;}
 .list .sort ul{ float:left;}
-.list .sort ul li{ float:left; padding-right:10px;}
+.list .sort ul li{ float:left; padding:0 5px;}
+.list .sort ul li.selected{color:#0479a7; background-color:#cadfec; border:1px solid #0479a7;}
 
 .list .item{ border:1px solid #f1f1f1; padding:5px 10px 10px; margin-bottom:10px;}
 .list .item .info{ line-height:26px; border-bottom:1px solid #ccc; margin-bottom:10px;}
@@ -74,5 +75,5 @@ a:hover{ color:#ff0000; text-decoration:underline;}
 .list .item .value span{ display:block; float:left; color:#aaa; padding-top:11px;}
 .list .item .value i{ clear:both; font-style:normal; color:#666; display:block;}
 .list .item .text{ float:left; height:50px; width:565px; overflow:hidden;}
-.list .item-hover{ border:1px solid #0479a7;}
+.list .item-hover{ border:1px solid #0479a7; background-color:#F3F9FC;}
 

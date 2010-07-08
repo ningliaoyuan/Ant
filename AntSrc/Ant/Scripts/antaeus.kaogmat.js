@@ -153,4 +153,13 @@ $("#InpNickname").blur(function(){
 	}
 });
 
+//Question Index页面list的hover效果
+$(".list .item").mouseover(function(){
+	$(this).addClass("item-hover");
+	$(this).children(".text").css("height","auto");
+}).mouseout(function(){
+	$(this).removeClass("item-hover");
+	$(this).children(".text").css("height","50px");
+});
+
 });
