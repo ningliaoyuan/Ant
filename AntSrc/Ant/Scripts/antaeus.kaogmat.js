@@ -27,10 +27,8 @@ var LogonSubmit = function(){
 			$(this),
 			{un:Username,psd:Password,remember:RememberMe},
 			function(){
-				//成功的话
 				//执行ajax刷新登录区域
-				//TODO
-				//ajaxRefresh
+				ajaxRefresh($("#LogonStatus"),{});
 				//最后关闭Popup
 				Logon.overlay().close();
 			},
@@ -103,12 +101,10 @@ var RegisterSubmit = function(){
 						//判断了这么多之后，丫的终于开始做提交了！！！
 						ajaxRequest(
 							$(this),
-							{email:Email,nick:Nickname,psd:Password},
+							{email:Email,nick:Nickname,psd:Password,cpsd:RePassword},
 							function(){
-								//成功的话
 								//执行ajax刷新登录区域
-								//TODO
-								//ajaxRefresh
+								ajaxRefresh($("#LogonStatus"),{});
 								//最后关闭Popup
 								Register.overlay().close();
 							},
