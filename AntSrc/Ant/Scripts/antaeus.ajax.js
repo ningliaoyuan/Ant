@@ -22,7 +22,7 @@ $.ajaxSetup({
 //所有AJAX的直接请求URL判断与控制
 var ajaxFunction = {};
 ajaxFunction["Logon"] = function(param, callback){$.post("/Account/AjaxLogon/",{Username:param.un, Password: param.psd, RememberMe: param.remember==1?'true':'false'}, callback);};
-ajaxFunction["Register"] = function(param, callback){$.post("/Account/AjaxRegister/",{Email:param.email, Username: param.nick, Password: param.psd}, callback);};
+ajaxFunction["Register"] = function(param, callback){$.post("/Account/AjaxRegister/",{Email:param.email, Username: param.nick, Password: param.psd, ConfirmPassword:param.cpsd}, callback);};
 ajaxFunction["EmailCheck"] = function (param, callback) { $.get("/Account/AjaxEmailCheck", { Email: param.email }, callback); };
 ajaxFunction["NickCheck"] = function (param, callback) { $.get("/Account/AjaxNickCheck", { Username: param.nick }, callback); };
 ajaxFunction["LogonStatus"] = function (param, callback) { $.get("/Account/", callback); };

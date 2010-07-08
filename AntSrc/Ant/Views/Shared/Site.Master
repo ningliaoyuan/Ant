@@ -34,7 +34,7 @@
 	<div class="clear"></div> 
 </div>
 <div class="blank15"></div>
-<div class="content"><asp:ContentPlaceHolder ID="MainContent" runat="server" /></div>
+<div class="content" id="LogonStatus" ajaxrefresh="LogonStatus"><asp:ContentPlaceHolder ID="MainContent" runat="server" /></div>
 <!--这里还需要写Footer-->
     
 </form>
