@@ -55,6 +55,75 @@ $("#InpUsername, #InpPassword").blur(function(){
 	}
 });
 
-
+var GetStringLength = function(strTemp){  
+	var i,sum;  
+	sum=0;  
+	for(i=0;i<strTemp.length;i++){  
+		if((strTemp.charCodeAt(i)>=0) && (strTemp.charCodeAt(i)<=255)){
+			sum=sum+1;
+		}else{
+			sum=sum+2;
+		}
+	}  
+	return sum;  
+};
+var RegisterSubmit = function(){
+	var Email = $.trim($("#InpEmail").val());
+	var Nickname = $.trim($("#InpNickname").val());
+	var Password = $.trim($("#InpPassword2").val());
+	var RePassword = $.trim($("#InpPassword3").val());
+	//为空判断
+	if(Email=="" || Nickname=="" || Password=="" || RePassword=="")	{
+		$("#BtnRegisterSubmit").parent().prev().show();
+	}else{
+		//不为空则隐藏为空信息
+		$("#BtnRegisterSubmit").parent().prev().hide();	
+		//判断密码重复度
+		if(Password!=RePassword){
+			$("#InpPassword3").parent().next().show();
+		}else{
+			$("#InpPassword3").parent().next().hide();
+			//验证邮箱地址
+			if(!/(\S)+[@]{1}(\S)+[.]{1}(\w)+/.test(Email)){
+				$("#InpEmail").parent().next().html("邮箱地址不符合规范");
+				$("#InpEmail").parent().next().show();
+			}else{
+				$("#InpEmail").parent().next().hide();
+				//判断昵称长度
+				if(GetStringLength(Nickname)>16){
+					$("#InpNickname").parent().next().removeClass("tip").addClass("wrong");
+				}else{
+					$("#InpNickname").parent().next().addClass("tip").removeClass("wrong");
+					//判断密码长度
+					if(Password.length<6){
+						$("#InpPassword2").parent().next().removeClass("tip").addClass("wrong");
+					}else{
+						$("#InpPassword2").parent().next().addClass("tip").removeClass("wrong");
+						//判断了这么多之后，丫的终于开始做提交了！！！
+						ajaxRequest(
+							$(this),
+							{email:Email,nick:Nickname,psd:Password},
+							function(){
+								//成功的话
+								//执行ajax刷新登录区域
+								//TODO
+								//ajaxRefresh
+								//最后关闭Popup
+								Register.overlay().close();
+							},
+							function(error){
+								//判断这个文本的出错信息里面是用户名错还是密码错
+								var temp = (error.indexOf("密码")>0)?"#InpPassword":"#InpUsername";
+								$(temp).parent().next().html(error).show();
+							}
+						);
+					}
+				}
+				
+			}
+		}
+	}
+};
+$("#BtnRegisterSubmit").bind("click",RegisterSubmit);
 
 });
