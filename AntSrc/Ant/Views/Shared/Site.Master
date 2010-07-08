@@ -19,7 +19,7 @@
 	
 <div class="header">
 	<div class="logo"><a href="http://www.kaogmat.com">考GMAT</a></div>
-   	<div class="status">
+   	<div class="status" id="LogonStatus" ajaxrefresh="LogonStatus">
     	<% Html.RenderPartial("~/Views/Shared/LogOnUserControl.ascx", string.Empty); %>
     </div>
     <div class="clear"></div>    
@@ -34,7 +34,7 @@
 	<div class="clear"></div> 
 </div>
 <div class="blank15"></div>
-<div class="content" id="LogonStatus" ajaxrefresh="LogonStatus"><asp:ContentPlaceHolder ID="MainContent" runat="server" /></div>
+<div class="content"><asp:ContentPlaceHolder ID="MainContent" runat="server" /></div>
 <!--这里还需要写Footer-->
     
 </form>

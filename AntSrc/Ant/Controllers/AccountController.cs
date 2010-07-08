@@ -49,6 +49,15 @@ namespace Ant.Controllers
         {
             if (ModelState.IsValid)
             {
+                string username = model.UserName;
+                if(username.IndexOf('@')>0)
+                {
+                    username = Membership.GetUserNameByEmail(username);
+                    if (string.IsNullOrEmpty(username))
+                    {
+                        return this.AjaxError("此邮箱或格式有误不存在！");
+                    }
+                }
                 if (MembershipService.ValidateUser(model.UserName, model.Password))
                 {
                     FormsService.SignIn(model.UserName, model.RememberMe);
@@ -97,7 +106,10 @@ namespace Ant.Controllers
         public ActionResult LogOff()
         {
             FormsService.SignOut();
-
+            if (Request.UrlReferrer != null)
+            {
+                return Redirect(Request.UrlReferrer.ToString());
+            }
             return RedirectToAction("Index", "Home");
         }
 
