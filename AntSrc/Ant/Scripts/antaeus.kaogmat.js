@@ -24,7 +24,7 @@ var LogonSubmit = function(){
 	//首先判断不为空
 	if(Username!="" && Password!=""){
 		ajaxRequest(
-			$(this),
+			$("#BtnLogonSubmit"),
 			{un:Username,psd:Password,remember:RememberMe},
 			function(){
 				//执行ajax刷新登录区域
@@ -39,11 +39,12 @@ var LogonSubmit = function(){
 			}
 		);
 	}else{
+		alert("ee");
 		$("#DivLogonEmpty").show();
 	}
 };
 $("#BtnLogonSubmit").bind("click",LogonSubmit);
-$("#InpUsername, #InpPassword").keyup(function(event){if(event.keyCode==13)LogonSubmit();});
+$("#InpUsername, #InpPassword").keyup(function(event){if(event.keyCode==13){LogonSubmit();}});
 //当光标在文本输入框内失去焦点，做为空判断
 $("#InpUsername, #InpPassword").blur(function(){
 	var Username = $.trim($("#InpUsername").val());

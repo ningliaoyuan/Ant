@@ -15,7 +15,7 @@ a:hover{ color:#ff0000; text-decoration:underline;}
 .header{ background-color:#fff; padding:15px;}
 .header .logo{ float:left; width:130px;}
 .header .logo a, .header .logo a:link, .header .logo a:visited, .header .logo a:hover{ color:#000; font-size:30px; font-weight:bold; text-decoration:none; line-height:30px;}
-.header .status{ float:right; width:200px; text-align:right; line-height:20px;}
+.header .status{ float:right; text-align:right; line-height:20px;}
 .nav{ background-color:#000; color:#fff; -moz-border-radius:0px 0px 5px 5px; -webkit-border-radius:0px 0px 5px 5px;}
 .nav ul{ float:left; width:700px; padding-left:5px;}
 .nav li{ display:block; float:left; width:70px; text-align:center; font-size:16px; line-height:40px;}
