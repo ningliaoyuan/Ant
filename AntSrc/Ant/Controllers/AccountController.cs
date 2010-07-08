@@ -322,5 +322,10 @@ namespace Ant.Controllers
             }
         }
 
+        public ActionResult AjaxPartLogon()
+        {
+            return PartialView("LogOnUserControl");
+        }
+
     }
 }
