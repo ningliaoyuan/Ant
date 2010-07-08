@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{417FF3C8-03AD-4DA5-94AC-FF5DC879C404}</ProjectGuid>
+    <ProjectGuid>{73A1703F-B7E5-4299-A9B5-F24BEA59F094}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ant.Models</RootNamespace>
-    <AssemblyName>Ant.Models</AssemblyName>
+    <RootNamespace>Ant.DB</RootNamespace>
+    <AssemblyName>Ant.DB</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -37,8 +37,6 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Caching" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,16 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\EmailAdmin.cs" />
-    <Compile Include="Common\Encryptor.cs" />
+    <Compile Include="IDProvider.cs" />
+    <Compile Include="MongoSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Questions\Comments.cs" />
-    <Compile Include="Questions\EntityInfo.cs" />
-    <Compile Include="Questions\Question.cs" />
-    <Compile Include="Questions\QuestionSource.cs" />
-    <Compile Include="Questions\QuestionType.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

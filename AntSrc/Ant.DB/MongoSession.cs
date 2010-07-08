@@ -3,38 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Norm;
-using Ant.Models.Questions;
 using Norm.Responses;
 using Norm.Configuration;
 using Norm.Collections;
+using System.Configuration;
 
-namespace Ant.Models.DB
+namespace Ant.DB
 {
     public class MongoSession : IDisposable
     {
 
         private readonly Mongo _provider;
+        static MongoSession()
+        {
+            string key = ConfigurationManager.AppSettings["MongoDBConnection"];
+            ConnectionString = ConfigurationManager.ConnectionStrings[key].ConnectionString;
+        }
+        static readonly string ConnectionString;
 
         public MongoSession()
         {
-            _provider = Mongo.Create("mongodb://127.0.0.1/NormTests?strict=false");
+            _provider = Mongo.Create(ConnectionString);
         }
 
         public MongoDatabase DB { get { return this._provider.Database; } }
 
-        public IQueryable<Question> Questions
+        public IQueryable<T> Query<T>()
         {
-            get { return _provider.GetCollection<Question>().AsQueryable(); }
+            return _provider.GetCollection<T>().AsQueryable();
         }
 
         public IMongoCollection<T> GetCollection<T>()
         {
-             return _provider.GetCollection<T>();
-        }
-
-        public IQueryable<T> GetQuery<T>()
-        {
-            return _provider.GetCollection<T>().AsQueryable();
+            return _provider.GetCollection<T>();
         }
 
         public void Dispose()
@@ -57,9 +58,9 @@ namespace Ant.Models.DB
             _provider.Database.GetCollection<T>().Delete(item);
         }
 
-        //public void Drop<T>()
-        //{
-        //    _provider.Database.DropCollection(MongoConfiguration.GetCollectionName(typeof(T)));
-        //}
+        public void Drop<T>()
+        {
+            _provider.Database.DropCollection(_provider.Database.GetCollection<T>().FullyQualifiedName);
+        }
     }
 }

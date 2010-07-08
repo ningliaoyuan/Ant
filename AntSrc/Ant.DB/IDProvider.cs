@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Runtime.Caching;
 
-namespace Ant.Models.DB
+namespace Ant.DB
 {
     public class IDProvider
     {
@@ -49,7 +48,7 @@ namespace Ant.Models.DB
                 {
                     using (var s = new MongoSession())
                     {
-                        var idItem = (from item in s.GetQuery<IDItem>()
+                        var idItem = (from item in s.Query<IDItem>()
                                       where item.Key == Key
                                       select item).FirstOrDefault();
 

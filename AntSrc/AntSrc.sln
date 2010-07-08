@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant.Tests", "Ant.Tests\Ant.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant.Models", "Ant.Models\Ant.Models.csproj", "{417FF3C8-03AD-4DA5-94AC-FF5DC879C404}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant.DB", "Ant.DB\Ant.DB.csproj", "{73A1703F-B7E5-4299-A9B5-F24BEA59F094}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{417FF3C8-03AD-4DA5-94AC-FF5DC879C404}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{417FF3C8-03AD-4DA5-94AC-FF5DC879C404}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{417FF3C8-03AD-4DA5-94AC-FF5DC879C404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73A1703F-B7E5-4299-A9B5-F24BEA59F094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73A1703F-B7E5-4299-A9B5-F24BEA59F094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73A1703F-B7E5-4299-A9B5-F24BEA59F094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73A1703F-B7E5-4299-A9B5-F24BEA59F094}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

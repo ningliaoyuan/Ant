@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Ant.Models.Questions;
-using Ant.Models.DB;
+using Ant.DB;
+using Ant.Models;
 
 namespace Ant.Areas.SC.Controllers
 {
@@ -17,7 +18,20 @@ namespace Ant.Areas.SC.Controllers
         {
             using (var s = new MongoSession())
             {
-                return View(s.Questions);
+                return View(s.Query<Question>());
+            }
+        }
+
+        public ActionResult Index2(Paging m)
+        {
+            using (var s = new MongoSession())
+            {
+                var q = s.Query<Question>();
+                if(m != null)
+                {
+                    q = m.Page(q);
+                }
+                return View(q);
             }
         }
         //
@@ -25,7 +39,10 @@ namespace Ant.Areas.SC.Controllers
 
         public ActionResult Details(int id)
         {
-            return View();
+            using (var s = new MongoSession())
+            {
+                return View(s.Query<Question>().Single(q => q.Number == id));                
+            }
         }
 
         //
@@ -48,6 +65,12 @@ namespace Ant.Areas.SC.Controllers
                 using (var s = new MongoSession())
                 {
                     q.Number = new IDProvider().GetNewID("Question");
+                    q.Info = new EntityInfo()
+                    {
+                        CrTime = DateTime.Now,
+                        CrUser = "admin",
+                        LastModified = DateTime.Now
+                    };
                     s.Add(q);
                 }
                 return RedirectToAction("Index");
